@@ -248,6 +248,19 @@
     .activity h2 { margin: 0 0 4px; font-size: 11.3pt; font-weight: 680; line-height: 1.4; }
     .activity p { margin: 0; color: #555b63; font-size: 9.15pt; line-height: 1.6; }
 
+    .credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 22px;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+    }
+    .credential { padding: 15px 16px 16px 0; }
+    .credential + .credential { padding-left: 18px; border-left: 1px solid var(--line); }
+    .credential h2 { margin: 0 0 5px; font-size: 9.7pt; font-weight: 680; }
+    .credential p { margin: 0; color: #555b63; font-size: 8.9pt; line-height: 1.55; }
+
     .page-number {
       position: absolute;
       right: 18mm;
@@ -454,12 +467,16 @@
             <p>AWS 기술 커뮤니티 활동에 참여했습니다.</p>
           </div>
         </article>
-        <article class="activity">
-          <span class="activity-date">기타</span>
-          <div>
-            <h2>자격 및 언어</h2>
-            <p>정보처리기사 · 영어·일본어 기초 비즈니스 · JLPT N3</p>
-          </div>
+      </section>
+
+      <section class="credentials" aria-label="자격증 및 언어">
+        <article class="credential">
+          <h2>자격증</h2>
+          <p>정보처리기사</p>
+        </article>
+        <article class="credential">
+          <h2>언어</h2>
+          <p>영어·일본어 기초 비즈니스 · JLPT N3</p>
         </article>
       </section>
 
