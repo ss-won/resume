@@ -236,6 +236,18 @@
     .collaboration h2 { margin-bottom: 6px; font-size: 10.4pt; font-weight: 680; }
     .collaboration p { max-width: 700px; margin-bottom: 0; color: #555b63; font-size: 8.95pt; line-height: 1.6; }
 
+    .activity-list { border-top: 1px solid var(--ink); }
+    .activity {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .activity-date { color: var(--accent); font-size: 8pt; font-weight: 720; }
+    .activity h2 { margin: 0 0 4px; font-size: 11.3pt; font-weight: 680; line-height: 1.4; }
+    .activity p { margin: 0; color: #555b63; font-size: 9.15pt; line-height: 1.6; }
+
     .page-number {
       position: absolute;
       right: 18mm;
@@ -310,11 +322,11 @@
         </div>
         <div>
           <h3>학력 및 기타</h3>
-          <p class="plain-list">가천대학교 컴퓨터공학과 · 2015.03 – 2020.02<br>정보처리기사 · TypeScript Handbook 한글화<br>영어·일본어 기초 비즈니스 · JLPT N3</p>
+          <p class="plain-list">가천대학교 컴퓨터공학과 · 2015.03 – 2020.02<br>정보처리기사<br>영어·일본어 기초 비즈니스 · JLPT N3</p>
         </div>
       </section>
 
-      <div class="page-number">01 / 02</div>
+      <div class="page-number">01 / 03</div>
     </section>
 
     <section class="page">
@@ -398,7 +410,53 @@
         </div>
       </article>
 
-      <div class="page-number">02 / 02</div>
+      <div class="page-number">02 / 03</div>
+    </section>
+
+    <section class="page">
+      <header class="page-head">
+        <span class="small-name">정소원</span>
+        <span class="small-role">Frontend Developer · 5년차</span>
+      </header>
+
+      <section class="page-intro">
+        <div class="eyebrow">보조 자료</div>
+        <h1>외부 활동</h1>
+        <p>직무 경력 외에 참여한 오픈소스와 개발 커뮤니티 활동입니다.</p>
+      </section>
+
+      <section class="activity-list">
+        <article class="activity">
+          <span class="activity-date">2020</span>
+          <div>
+            <h2>OSSCA · TypeScript Handbook 한글화</h2>
+            <p>Open Source Contribution Academy에서 Microsoft TypeScript Handbook 한국어 번역에 참여했습니다.</p>
+          </div>
+        </article>
+        <article class="activity">
+          <span class="activity-date">2023</span>
+          <div>
+            <h2>githru-vscode-ext 기능 개발</h2>
+            <p>OSSCA 활동으로 VS Code 확장 프로그램의 기능 개발에 참여했습니다.</p>
+          </div>
+        </article>
+        <article class="activity">
+          <span class="activity-date">2021</span>
+          <div>
+            <h2>SmileGate Membership · AI 1기</h2>
+            <p>AI 기반 웹 애플리케이션 프로젝트를 진행했습니다.</p>
+          </div>
+        </article>
+        <article class="activity">
+          <span class="activity-date">2019</span>
+          <div>
+            <h2>AUSG · AWS University Student Group 1기</h2>
+            <p>AWS 기술 커뮤니티 활동에 참여했습니다.</p>
+          </div>
+        </article>
+      </section>
+
+      <div class="page-number">03 / 03</div>
     </section>
   </main>
 </body>
