@@ -351,7 +351,7 @@
       <section class="page-intro">
         <div class="eyebrow">상세 경험</div>
         <h1>주요 프로젝트</h1>
-        <p>각 제품에서 맡은 문제와 검토 과정, 실제 구현 범위를 정리했습니다.</p>
+        <p>제품의 제약을 어떻게 해석하고, 어떤 선택을 거쳐 사용자 흐름과 운영 방식을 바꿨는지 정리했습니다.</p>
       </section>
 
       <article class="case">
@@ -363,16 +363,16 @@
         </div>
         <div class="case-grid">
           <section class="case-col">
-            <span class="case-label">문제</span>
-            <p>DJT 지갑은 요청을 board에 제출한 뒤 승인자가 온체인 거래를 실행하는 조직형 지갑입니다. 동기식 RPC 응답을 전제한 기존 입금 흐름으로는 지원할 수 없었습니다.</p>
+            <span class="case-label">기존 제약</span>
+            <p>DJT 지갑은 요청을 board에 올린 뒤 승인자가 온체인 거래를 실행합니다. 서명 뒤 transfer txHash와 receipt를 확인하던 기존 입금 흐름으로는, 비동기 지갑의 완료 시점을 다음 단계로 넘길 수 없었습니다.</p>
           </section>
           <section class="case-col">
-            <span class="case-label">판단</span>
-            <p>intent·webhook 해법은 추적에는 유리하지만 endpoint·검증 계층과 기존 흐름의 변경이 컸습니다. EIP-5792 client id에 processId를 포함하고 지갑 상태를 조회하는 프론트엔드 중심 방식을 제안했습니다.</p>
+            <span class="case-label">선택한 흐름</span>
+            <p>intent·webhook은 추적에는 유리했지만 endpoint와 검증 계층, 기존 흐름의 변경이 컸습니다. EIP-5792 clientId에 processId를 담아 지갑 상태를 조회하고, transfer 뒤 서명·제출을 잇는 방식을 제안했습니다.</p>
           </section>
           <section class="case-col">
-            <span class="case-label">적용과 한계</span>
-            <p>명시적 실패가 아니면 process를 유지하고, 완료 뒤 서명·제출을 이어가도록 순서를 바꿨습니다. active process와 AA 잔액을 기준으로 재진입도 지원했습니다. Hashport에서는 WebView 구현과 파트너 커뮤니케이션을 맡았습니다.</p>
+            <span class="case-label">사용자 흐름의 변화</span>
+            <p>명시적 실패가 아니면 process를 유지해, active process와 AA 잔액을 기준으로 재진입 후 서명·제출을 이어갈 수 있게 했습니다. Hashport에서는 WebView 구현과 파트너 커뮤니케이션을 맡았습니다.</p>
           </section>
         </div>
       </article>
@@ -386,16 +386,16 @@
         </div>
         <div class="case-grid">
           <section class="case-col">
-            <span class="case-label">문제</span>
-            <p>blocks·transactions·tokens 첫 화면은 실시간 데이터와 함께 시간 계산, 막대 차트, 이미지 등 비용이 큰 행을 렌더링했습니다. 최초 표시가 느리고 Lighthouse 점수도 낮았습니다.</p>
+            <span class="case-label">병목</span>
+            <p>blocks·transactions·tokens 첫 화면은 실시간 데이터와 함께 시간 계산, 막대 차트, 이미지 등 비용이 큰 행을 렌더링했습니다. 초기 표시가 느리고, 화면에 보이기 전부터 렌더링 비용이 쌓였습니다.</p>
           </section>
           <section class="case-col">
-            <span class="case-label">검토</span>
-            <p>가상화를 먼저 적용했지만, 행 자체의 렌더링 비용이 커 스크롤 때 재렌더링과 빈 화면이 더 자주 보였고 최초 표시도 크게 나아지지 않았습니다. 이미 그린 행을 유지하는 점진 렌더링으로 바꿨습니다.</p>
+            <span class="case-label">버린 접근</span>
+            <p>가상화를 먼저 적용했지만 행 자체가 무거워 스크롤 때 재렌더링과 빈 화면이 더 자주 보였고, 초기 표시도 크게 나아지지 않았습니다. 이미 그린 행을 유지하는 점진 렌더링으로 방향을 바꿨습니다.</p>
           </section>
           <section class="case-col">
-            <span class="case-label">구현 및 결과</span>
-            <p>초기에는 최대 10개와 여유 5개 행만 렌더링하고, 나머지는 infinite scroll과 부분 skeleton으로 이어 보이게 했습니다. 고비용 UI는 지연 로딩하고 WebSocket 이벤트는 30초 단위로 묶어 반영했습니다. 초기 표시 지연과 스크롤 중 빈 화면을 줄였습니다.</p>
+            <span class="case-label">렌더링 전략</span>
+            <p>초기에는 최대 10개와 여유 5개 행만 보여주고, 이후에는 infinite scroll과 부분 skeleton으로 연결했습니다. 고비용 UI는 지연 로딩하고 WebSocket 이벤트는 30초 단위로 묶어 초기 표시 지연과 스크롤 중 빈 화면을 줄였습니다.</p>
           </section>
         </div>
       </article>
@@ -409,16 +409,16 @@
         </div>
         <div class="case-grid">
           <section class="case-col">
-            <span class="case-label">멀티 환경 WebView</span>
-            <p>공통 UI bundle을 별도로 배포하고 모바일·Chrome Extension에서 불러왔습니다. postMessage와 Jotai external store로 지갑 상태와 거래 내역을 전달·동기화했습니다.</p>
+            <span class="case-label">공통 UI 환경</span>
+            <p>공통 UI bundle을 별도로 배포하고 모바일·Chrome Extension에서 불러왔습니다. postMessage와 Jotai external store로 지갑 상태와 거래 내역을 전달·동기화했고, 모바일 stack view의 상태 반응과 페이지 전환을 조정했습니다.</p>
           </section>
           <section class="case-col">
-            <span class="case-label">BFF 경계</span>
-            <p>여러 외부 API와 RPC 호출이 프론트엔드에 흩어져 비즈니스 로직과 캐시 관리가 복잡했습니다. 동료와 endpoint·디렉터리·캐시·에러 모델을 협의하고, 화면 단위로 조합할 호출을 NestJS BFF로 옮겼습니다.</p>
+            <span class="case-label">호출 경계</span>
+            <p>여러 외부 API와 RPC 호출이 프론트엔드에 흩어져 비즈니스 로직과 캐시 관리가 복잡했습니다. 동료와 endpoint·디렉터리·캐시·에러 모델을 맞춘 뒤, 화면 단위로 조합할 호출을 NestJS BFF로 옮겼습니다.</p>
           </section>
           <section class="case-col">
-            <span class="case-label">구현 범위</span>
-            <p>BTCFi 대시보드 BFF와 Swap BFF 구현을 맡았습니다. 모바일 stack view의 상태 반응과 페이지 전환을 조정했고, 신규 WebView에서는 관리할 endpoint와 의존 지점이 줄어 디버깅이 수월해졌습니다.</p>
+            <span class="case-label">내 구현과 변화</span>
+            <p>BTCFi 대시보드 BFF와 Swap BFF 구현을 맡았습니다. 신규 WebView에서는 관리할 endpoint와 의존 지점이 줄어, 제품 흐름을 따라가며 디버깅하기 수월해졌습니다.</p>
           </section>
         </div>
       </article>
