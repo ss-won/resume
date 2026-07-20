@@ -305,10 +305,10 @@
             <div><span class="job-company">파이랩테크놀로지 · Bifrost Platform</span><span class="job-role">Frontend Developer</span></div>
             <span class="job-date">2024.09 – 현재</span>
           </div>
-          <p class="job-summary">Pockie 지갑의 모바일·Chrome Extension WebView에서 miniDapp을 개발하고, BTCFi 파트너 제품과 NestJS BFF를 구현했습니다. Blockscout 기반 사내 탐색기는 유지보수와 기능 개선, 오픈소스 업데이트 반영을 담당했으며 Slack AI 자동 리뷰 워크플로우도 구축했습니다.</p>
+          <p class="job-summary">Pockie 지갑의 모바일·Chrome Extension 환경에서 BTCFi 제품과 Swap WebView를 개발하고, NestJS BFF를 구현했습니다. Blockscout 기반 사내 탐색기는 유지보수와 기능 개선, 오픈소스 업데이트 반영을 담당했으며 Slack AI 자동 리뷰 워크플로우도 구축했습니다.</p>
           <ul>
             <li><span class="project-name">BTCFi Partners</span> <span class="project-desc">· JPYC 스테이블코인의 예치·인출·수익 청구를 지원하는 파트너용 제품.</span> 사내 컨트랙트 팀의 금융 전략과 파트너 요구사항에 맞춰 개발했고, DJT 조직형 비동기 지갑을 위해 EIP-5792와 processId 기반 진행 상태 추적 흐름을 검토·제안했습니다.</li>
-            <li><span class="project-name">Bifrost Explorer</span> <span class="project-desc">· Blockscout을 fork해 운영하는 사내 블록·트랜잭션·토큰 탐색기.</span> 입사 후 이어받아 유지보수, 브릿지 내역 필터 기능과 선택적 upstream 업데이트 반영을 담당했습니다. 첫 화면 테이블 성능 개선으로 로컬 Lighthouse 최저 점수를 45에서 91로 개선했습니다.</li>
+            <li><span class="project-name">Bifrost Explorer</span> <span class="project-desc">· Blockscout을 fork해 운영하는 사내 블록·트랜잭션·토큰 탐색기.</span> 입사 후 이어받아 유지보수, 브릿지 내역 필터 기능과 선택적 upstream 업데이트 반영을 담당했습니다. 첫 화면 테이블의 초기 렌더링 성능을 개선했습니다.</li>
             <li><span class="project-name">Pockie WebView &amp; BFF</span> <span class="project-desc">· Pockie 지갑의 모바일·Chrome Extension 환경에서 BTCFi·Swap을 제공하는 WebView 제품.</span> 동료 한 명과 분산된 API와 RPC 호출을 NestJS BFF로 묶고, BTCFi 대시보드와 Swap BFF 구현을 맡았습니다.</li>
             <li><span class="project-name">Donald</span> <span class="project-desc">· 코드 리뷰·리서치 등을 지원하는 사내 Slack AI 도구.</span> 새 Pull Request를 자동 리뷰하고, 리뷰 근거와 confidence를 검증하는 verifier를 추가했습니다. CI·테스트·타입 오류와 high severity 이슈가 없을 때만 자동 approve되도록 workflow를 구축했습니다.</li>
           </ul>
@@ -321,7 +321,7 @@
           </div>
           <p class="job-summary">AI 데이터 분석 플랫폼 ThanoSQL의 웹 제품과 개발 환경을 담당했습니다. 2023년부터 퇴사 전까지 프론트엔드 파트의 업무 스크럼과 기술 논의를 진행했고, 초기에는 정부과제와 광고 데이터 PoC에도 참여했습니다.</p>
           <ul>
-            <li><span class="project-name">ThanoSQL</span> <span class="project-desc">· SQL과 Python으로 데이터를 분석하고 AI 모델을 실행하는 온프레미스 플랫폼.</span> SQL Editor·JupyterLab·Query Manager를 Workspace로 연결하고 Monaco Editor·ANTLR 기반 SQL 편집기와 비정형 데이터 Query Viewer를 개발했습니다. pnpm과 Turborepo를 도입해 평균 빌드 시간을 7분에서 1분으로 줄이고 공용 UI·아이콘·유틸 패키지를 정리했습니다.</li>
+            <li><span class="project-name">ThanoSQL</span> <span class="project-desc">· SQL과 Python으로 데이터를 분석하고 AI 모델을 실행하는 온프레미스 플랫폼.</span> SQL Editor·JupyterLab·Query Manager를 Workspace로 연결하고 SQL 편집·조회 기능을 개발했습니다. pnpm과 Turborepo를 도입해 공용 UI·아이콘·유틸 패키지와 빌드 환경을 정리했습니다.</li>
             <li><span class="project-name">P2P-DC</span> <span class="project-desc">· 에너지 예측 모델을 제공하는 정부과제 PoC.</span> AI 팀의 예측 모델을 클라이언트에서 조회할 수 있도록 FastAPI API를 구현했습니다.</li>
             <li><span class="project-name">M.AD.E</span> <span class="project-desc">· 광고 지표를 수집·전처리하는 마케팅 PoC.</span> Google·Facebook Ads API에서 필요한 지표를 수집해 자사 데이터 형식으로 전처리했습니다.</li>
           </ul>
@@ -395,7 +395,7 @@
           </section>
           <section class="case-col">
             <span class="case-label">구현 및 결과</span>
-            <p>초기에는 최대 10개와 여유 5개 행만 렌더링하고, 나머지는 infinite scroll과 부분 skeleton으로 이어 보이게 했습니다. 고비용 UI는 지연 로딩하고 WebSocket 이벤트는 30초 단위로 묶어 반영했습니다. 로컬 Lighthouse 최저 점수는 45에서 91로 올랐습니다.</p>
+            <p>초기에는 최대 10개와 여유 5개 행만 렌더링하고, 나머지는 infinite scroll과 부분 skeleton으로 이어 보이게 했습니다. 고비용 UI는 지연 로딩하고 WebSocket 이벤트는 30초 단위로 묶어 반영했습니다. 초기 표시 지연과 스크롤 중 빈 화면을 줄였습니다.</p>
           </section>
         </div>
       </article>
@@ -410,7 +410,7 @@
         <div class="case-grid">
           <section class="case-col">
             <span class="case-label">멀티 환경 WebView</span>
-            <p>공통 UI bundle을 별도로 배포하고 모바일·Chrome Extension에서 불러왔습니다. postMessage와 Jotai external store로 지갑 상태와 거래 내역을 저장·동기화했습니다.</p>
+            <p>공통 UI bundle을 별도로 배포하고 모바일·Chrome Extension에서 불러왔습니다. postMessage와 Jotai external store로 지갑 상태와 거래 내역을 전달·동기화했습니다.</p>
           </section>
           <section class="case-col">
             <span class="case-label">BFF 경계</span>
