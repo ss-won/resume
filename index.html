@@ -319,6 +319,41 @@
     font-weight: 500;
   }
 
+  .svc-map {
+    background: #f7f8fc;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .svc-row {
+    display: block;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .svc-name {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .svc-name::after {
+    content: ' — ';
+    color: var(--ink4);
+    font-family: var(--sans);
+    font-weight: 400;
+  }
+
+  .svc-desc {
+    font-size: 12px;
+    color: var(--ink3);
+  }
+
   .result-block {
     background: #f7f8fc;
     border-left: 2px solid var(--accent);
@@ -543,7 +578,22 @@
       <div class="ach-num">01 /</div>
       <div>
         <div class="ach-title">프론트엔드 성능 병목 개선</div>
-        <p class="ach-body">Gas Top-up·BiFi WebView의 데이터 조회 범위·중복 호출 구조를 정리하고, Bifrost Explorer 목록 화면의 초기 렌더링 범위와 WebSocket 이벤트 처리 방식을 조정했습니다.</p>
+        <p class="ach-body">Pockie(크립토 자산 지갑 서비스) 내 Gas Top-up·BiFi WebView와 Bifrost Explorer(Bifrost Network 블록 탐색기)에서 발생한 성능 병목을 서비스별 원인에 맞춰 개선했습니다. Pockie 계열은 데이터 조회 범위·중복 호출 구조를 정리했고, Explorer 계열은 초기 렌더링 범위와 WebSocket 이벤트 처리 방식을 조정했습니다.</p>
+
+        <div class="svc-map">
+          <div class="svc-row">
+            <span class="svc-name">Gas Top-up</span>
+            <span class="svc-desc">Pockie 내 네트워크별 코인 충전 웹 서비스. 지원 토큰 범위와 서버 캐시 주기에 맞춰 자산·잔액 조회 범위를 줄이고, 불필요한 vault address·network asset·SDK 의존을 제거해 진입 시 호출 구조를 단순화</span>
+          </div>
+          <div class="svc-row">
+            <span class="svc-name">BiFi</span>
+            <span class="svc-desc">Bifrost Network 예금·대출 DApp WebView. 토큰·네트워크 선택 시 네트워크별 bridge pair를 반복 조회하던 구조(1+N회)를 outbound/inbound 2회 캐시 조회로 전환해 초기 데이터 로딩 구조 단순화</span>
+          </div>
+          <div class="svc-row">
+            <span class="svc-name">Bifrost Explorer</span>
+            <span class="svc-desc">Bifrost Network 블록 탐색기. /blocks·/txs·/tokens 목록 뷰에서 행마다 발생하던 시간 계산·상태 표시·차트·이미지 처리 비용을 줄이기 위해 초기 렌더링 범위 제한·단계적 렌더링·WebSocket 이벤트 30초 배치 처리 적용</span>
+          </div>
+        </div>
 
         <div class="ach-sub">
           <div class="ach-sub-title">Gas Top-up 호출 구조 단순화</div>
@@ -597,7 +647,18 @@
       <div class="ach-num">02 /</div>
       <div>
         <div class="ach-title">모바일 WebView 거래 제품 구현</div>
-        <p class="ach-body">Mobile App/Chrome Extension에서 같은 WebView 거래 화면을 재사용할 수 있도록 BFF 계약 기반 책임 경계를 정리하고, 파트너사(Hashport Wallet)와 postMessage 이벤트를 협의·설계해 widget route로 WebView/일반 웹 접근을 분리했습니다.</p>
+        <p class="ach-body">서로 다른 호스트(Mobile App·Chrome Extension)와 파트너사 지갑(Hashport Wallet)에서 같은 거래 상품을 노출하기 위해, 화면·BFF·호스트 지갑·파트너사 지갑 사이의 책임 경계를 정리했습니다. 클라이언트 배포 없이 기능 노출 조건을 서버와 route 경계에서 제어할 수 있는 구조를 만들었습니다.</p>
+
+        <div class="svc-map">
+          <div class="svc-row">
+            <span class="svc-name">Pockie miniDApp ↔ BFF ↔ Mobile App / Chrome Extension</span>
+            <span class="svc-desc">BiFi(Bifrost Network 예금·대출)·Swap·BTCFi 거래 화면이 BFF 계약을 기준으로 자산·거래 데이터를 소비하고, 지갑 서명·전송은 호스트 지갑(Mobile App 또는 Chrome Extension)에 위임. 같은 WebView 거래 화면을 여러 호스트에서 재사용하는 구조</span>
+          </div>
+          <div class="svc-row">
+            <span class="svc-name">BTCFi Partners ↔ Hashport Wallet</span>
+            <span class="svc-desc">JPYC 스테이블코인 예치 상품을 파트너사(Hashport Wallet) iOS·Android 모바일 지갑의 WebView에서 제공. 기존 dApp 웹 흐름을 모바일 지갑 안에서 유지하기 위해 postMessage 이벤트를 협의·설계하고, widget route로 WebView 접근과 일반 웹 접근을 분리해 상품 로직 재사용</span>
+          </div>
+        </div>
 
         <div class="ach-sub">
           <div class="ach-sub-title">BiFi·Swap·BTCFi WebView 거래 화면 구현</div>
@@ -623,7 +684,14 @@
       <div class="ach-num">03 /</div>
       <div>
         <div class="ach-title">사내 AI Agent 런타임 개선</div>
-        <p class="ach-body">사내 Slack 기반 AI Agent(금쪽이)의 컨텍스트 주입, 도구 실행, 권한 통제, 감사 로그 구조를 개선했습니다. 단순한 자동화 결과보다 사람이 최종 확인하는 운영 원칙 안에서 AI가 검토·요약·검증을 보조하도록 만드는 구조에 초점을 맞췄습니다.</p>
+        <p class="ach-body">Slack 기반으로 운영되는 사내 AI Agent(금쪽이)의 런타임 구조를 개선했습니다. 금쪽이는 코드 리뷰 자동화·Jira 연동·파일 읽기/쓰기 등 개발 workflow를 보조하는 에이전트로, 단순 자동화보다 사람이 최종 확인하는 운영 원칙 안에서 AI가 검토·요약·검증을 보조하도록 설계에 초점을 맞췄습니다.</p>
+
+        <div class="svc-map">
+          <div class="svc-row">
+            <span class="svc-name">금쪽이</span>
+            <span class="svc-desc">사내 Slack 기반 AI Agent. Claude Agent SDK(→ Codex app server) 기반으로 MCP 도구를 활용해 코드 리뷰·Jira 티켓 검증·CI 결과 확인·파일 읽기/쓰기를 수행하며, Slack에서 요청을 받아 결과를 반환하는 구조로 운영</span>
+          </div>
+        </div>
 
         <div class="ach-sub">
           <div class="ach-sub-title">컨텍스트 주입 구조 개선</div>
