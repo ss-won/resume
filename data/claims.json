@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "description": "Resume claims with evidence levels for automation and verification",
+    "snapshot_date": "2026-08-19",
+    "evidence_levels": ["public", "redacted-internal", "self-attested", "derived"]
+  },
+  "claims": [
+    {
+      "id": "exp-pilab-webview-reuse",
+      "text": "Mobile App과 Chrome Extension에서 동일한 BTCFi·Swap WebView 거래 화면을 재사용할 수 있도록 공통 UI 번들, postMessage 연동, Pockie BFF API 기반 거래 상태 조회 구조를 구현",
+      "evidence": "redacted-internal",
+      "repo": "pockie-ui",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-bff-integration",
+      "text": "사내 운영 DApp의 비즈니스 로직을 BFF 계약과 TanStack Query hook 기반으로 통합",
+      "evidence": "redacted-internal",
+      "repo": "pockie-ui",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-btcfi-partner",
+      "text": "JPYC 스테이블코인 예치·인출·수익 청구, 비동기 입금·복구·epoch 출금·진행 대시보드 초기 구축부터 릴리스까지 담당",
+      "evidence": "redacted-internal",
+      "repo": "btcfi-partners-front",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-explorer-nextjs",
+      "text": "Blockscout 기반 Bifrost Explorer — Next.js App Router 전환, blocks·transactions·tokens 목록 화면 성능 개선",
+      "evidence": "redacted-internal",
+      "repo": "explorer-front",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-explorer-lcp-blocks",
+      "text": "/blocks LCP 3.7s→1.9s (↓49%), TBT 1,010ms→270ms (↓73%)",
+      "evidence": "redacted-internal",
+      "caveat": "local Lighthouse measurement, not production RUM",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-explorer-lcp-txs",
+      "text": "/txs LCP 3.7s→2.2s (↓41%), TBT 1,330ms→200ms (↓85%)",
+      "evidence": "redacted-internal",
+      "caveat": "local Lighthouse measurement",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-explorer-lcp-tokens",
+      "text": "/tokens LCP 3.3s→1.8s (↓45%), TBT 510ms→190ms (↓63%)",
+      "evidence": "redacted-internal",
+      "caveat": "local Lighthouse measurement",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-ai-agent",
+      "text": "사내 Slack 기반 AI Agent의 코드 리뷰 workflow, confidence verifier, Jira 검증, 품질 게이트 구성",
+      "evidence": "redacted-internal",
+      "repo": "Donald",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-pilab-btcfi-outcome-users",
+      "text": "BTCFi Partners · Hashport Wallet WebView — 출시 3개월간 일본 액티브 유저 750명대",
+      "evidence": "self-attested",
+      "interview_defensible": true,
+      "interview_note": "'팀에서 공유된 수치 기준으로는' 형태로 답변"
+    },
+    {
+      "id": "exp-pilab-btcfi-outcome-deposit",
+      "text": "실제 입금 1억 엔대 운영 중",
+      "evidence": "self-attested",
+      "interview_defensible": true,
+      "interview_note": "동일"
+    },
+    {
+      "id": "exp-sm-monaco-antlr",
+      "text": "ANTLR 문법을 Monaco Editor에 연결한 SQL 구문 강조, 문법 오류 진단, 키워드 자동완성 편집기 컴포넌트 개발",
+      "evidence": "public",
+      "source": "velog + resume",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-sm-turborepo",
+      "text": "pnpm·Turborepo 기반 모노레포 전환, 평균 빌드 시간 7분→1분 단축",
+      "evidence": "public",
+      "source": "velog + resume",
+      "caveat": "당시 측정 기준",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-sm-fastapi",
+      "text": "PyTorch .pt 모델 서빙 FastAPI 구현, Docker Compose 배포 환경 구성",
+      "evidence": "public",
+      "source": "resume",
+      "interview_defensible": true
+    },
+    {
+      "id": "exp-sm-virtualization-decision",
+      "text": "비정형 Query Viewer: 행 수 많고 행 가벼움 → 가상화 채택. Explorer: 행 하나가 무거움 → 가상화 제거 후 점진 렌더링",
+      "evidence": "public",
+      "source": "velog (Smartmind) + resume (Explorer)",
+      "interview_defensible": true,
+      "interview_note": "같은 사람이 반대 결론을 내린 구체적 이유 설명 가능"
+    }
+  ]
+}

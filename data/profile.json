@@ -1,0 +1,81 @@
+{
+  "name": "정소원",
+  "name_en": "Sowon Jung",
+  "role": "Frontend Developer",
+  "years_experience": 5,
+  "contact": {
+    "email": "swj960515@gmail.com",
+    "github": "https://github.com/ss-won",
+    "velog": "https://velog.io/@ss-won",
+    "resume_html": "https://ss-won.github.io/resume/",
+    "resume_pdf": "https://ss-won.github.io/resume/sowon-jung-cv.pdf"
+  },
+  "employment": [
+    {
+      "company": "파이랩테크놀로지",
+      "company_en": "Pilab Technology (Bifrost Platform)",
+      "role": "Frontend Developer",
+      "start": "2024-09",
+      "end": null,
+      "current": true,
+      "domains": ["Web3", "DeFi", "Mobile WebView", "AI Agent Runtime"],
+      "tech_stack": [
+        "TypeScript", "React", "Next.js", "TanStack Query", "Jotai",
+        "NestJS", "wagmi", "viem", "Chakra UI", "Vitest", "Playwright", "Sentry"
+      ]
+    },
+    {
+      "company": "스마트마인드",
+      "company_en": "Smartmind (ThanoSQL)",
+      "role": "Frontend Part Leader",
+      "role_progression": [
+        "Full-stack Engineer",
+        "Frontend Developer",
+        "Frontend Part Leader"
+      ],
+      "start": "2021-07",
+      "end": "2024-09",
+      "current": false,
+      "domains": ["AI Data Platform", "Data Analysis", "Enterprise SaaS"],
+      "tech_stack": [
+        "TypeScript", "React", "Next.js", "Vite", "Monaco Editor", "ANTLR",
+        "JupyterLab", "pnpm", "Turborepo", "Playwright", "FastAPI", "Docker Compose"
+      ]
+    }
+  ],
+  "education": {
+    "school": "가천대학교",
+    "school_en": "Gachon University",
+    "major": "컴퓨터공학과",
+    "major_en": "Computer Science",
+    "gpa": "3.98 / 4.5"
+  },
+  "certifications": [
+    { "name": "정보처리기사", "year": 2019 }
+  ],
+  "activities": [
+    { "name": "OSSCA TypeScript Handbook 한글화", "year": 2020 },
+    { "name": "OSSCA githru-vscode-ext", "year": 2023 },
+    { "name": "SmileGate Membership AI 1기", "year": 2021 },
+    { "name": "AUSG 1기", "year": 2019 }
+  ],
+  "languages": [
+    { "language": "한국어", "level": "native" },
+    { "language": "영어", "level": "business_basic" },
+    { "language": "일본어", "level": "business_basic", "cert": "JLPT N3" }
+  ],
+  "github_aggregate": {
+    "_evidence": "redacted-internal",
+    "_note": "Collected from private bifrost-platform org; individual PR links withheld",
+    "org": "bifrost-platform",
+    "account": "pilab-sowon",
+    "snapshot_date": "2026-07-13",
+    "period_start": "2024-09-03",
+    "period_end": "2026-07-10",
+    "authored_prs": 515,
+    "merged_prs": 503,
+    "merge_rate_percent": 97.7,
+    "repositories_contributed": 21,
+    "non_release_prs": 376
+  }
+}

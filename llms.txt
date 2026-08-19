@@ -1,0 +1,52 @@
+# Sowon Jung — Career Wiki for LLM Assistants
+
+This file is the entrypoint for AI assistants helping with career, job application, or technical interview tasks for Sowon Jung (정소원).
+
+## Who this is for
+
+Recruiters, hiring managers, or AI assistants evaluating 정소원's background. All data here is public and redaction-reviewed; the underlying private evidence repo is described but not linked.
+
+## Quick summary
+
+- **Name:** 정소원 (Sowon Jung)
+- **Role:** Frontend Developer, ~5 years total experience
+- **Current:** 파이랩테크놀로지 (Bifrost Platform), 2024.09–present
+- **Previous:** 스마트마인드 (ThanoSQL), 2021.07–2024.09
+- **Core skills:** TypeScript · React · Next.js · Web3/EVM · NestJS BFF · Playwright E2E · AI agent runtime
+- **Contact:** swj960515@gmail.com · github.com/ss-won · velog.io/@ss-won
+- **Resume (PDF):** https://ss-won.github.io/resume/sowon-jung-cv.pdf
+
+## Wiki files
+
+| File | Purpose |
+|---|---|
+| [wiki/profile.md](wiki/profile.md) | Full background, tech stack, education, language |
+| [wiki/achievements.md](wiki/achievements.md) | Key achievements with evidence levels |
+| [wiki/career-themes.md](wiki/career-themes.md) | Cross-cutting engineering themes backed by multi-repo evidence |
+| [wiki/persona.md](wiki/persona.md) | Working style, preferences, self-described strengths |
+| [wiki/resume-claims.md](wiki/resume-claims.md) | Every resume sentence mapped to its evidence level |
+| [wiki/evidence-index.md](wiki/evidence-index.md) | Where to find supporting evidence (public sources only) |
+| [wiki/redaction-policy.md](wiki/redaction-policy.md) | What is public vs. withheld and why |
+
+## Machine-readable data
+
+| File | Purpose |
+|---|---|
+| [data/profile.json](data/profile.json) | Structured profile for automation |
+| [data/themes.json](data/themes.json) | Engineering themes with evidence tags |
+| [data/claims.json](data/claims.json) | Resume claims with evidence levels |
+
+## Playbooks and prompts
+
+| File | Purpose |
+|---|---|
+| [playbooks/update-career-wiki.md](playbooks/update-career-wiki.md) | How to refresh this wiki when new data arrives |
+| [prompts/career-persona.system.md](prompts/career-persona.system.md) | System prompt for assistants acting as career advisor |
+| [prompts/wiki-maintainer.system.md](prompts/wiki-maintainer.system.md) | System prompt for assistants maintaining this wiki |
+
+## Evidence levels used throughout
+
+- **Public:** Verifiable from public sources (resume, velog, GitHub public repos)
+- **Redacted-internal:** Confirmed by private GitHub data; internal links withheld
+- **Self-attested:** Business metrics or context provided by the engineer; not independently verifiable from public sources
+- **Derived:** Calculated from verified data (e.g., merge rate)
