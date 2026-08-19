@@ -1,487 +1,685 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>정소원 | Frontend Developer</title>
-  <style>
-    @page { size: A4; margin: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정소원 — Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --ink: #15171a;
-      --body: #34383e;
-      --muted: #717780;
-      --line: #d9dde2;
-      --soft-line: #eceef1;
-      --accent: #3156d9;
-      --paper: #ffffff;
-      --canvas: #eceff2;
-    }
+  :root {
+    --ink: #1a1a1a;
+    --ink2: #3d3d3d;
+    --ink3: #767676;
+    --ink4: #aeaeae;
+    --rule: #e2e2e2;
+    --accent: #1d4ed8;
+    --bg: #ffffff;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  }
 
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
-    body {
-      background: var(--canvas);
-      color: var(--body);
-      font-family: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-      font-size: 9.75pt;
-      font-weight: 400;
-      line-height: 1.55;
-      letter-spacing: 0;
-      word-break: keep-all;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 13.5px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    .page {
-      position: relative;
-      width: 210mm;
-      height: 297mm;
-      margin: 12mm auto;
-      padding: 16mm 18mm 15mm;
-      overflow: hidden;
-      background: var(--paper);
-      box-shadow: 0 8px 28px rgba(23, 30, 40, 0.1);
-      break-after: page;
-      page-break-after: always;
-    }
-    .page:last-child { break-after: auto; page-break-after: auto; }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 72px 60px 80px;
+  }
 
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3, strong { color: var(--ink); }
-    a { color: inherit; text-decoration: none; }
+  /* ── Header ── */
+  .header {
+    margin-bottom: 52px;
+  }
 
-    .masthead {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 24px;
-      padding-bottom: 13px;
-      border-bottom: 1px solid var(--ink);
-    }
-    .name {
-      margin: 0;
-      font-size: 28pt;
-      font-weight: 720;
-      line-height: 1;
-    }
-    .role {
-      margin-top: 7px;
-      color: var(--accent);
-      font-size: 9.6pt;
-      font-weight: 650;
-    }
-    .contact {
-      color: var(--muted);
-      font-size: 8.65pt;
-      line-height: 1.65;
-      text-align: right;
-      white-space: nowrap;
-    }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 16px;
+  }
 
-    .hero {
-      margin-bottom: 22px;
-      padding: 19px 0 20px;
-      border-bottom: 1px solid var(--line);
-    }
-    .hero p {
-      max-width: 720px;
-      margin-bottom: 0;
-      color: #4d5259;
-      font-size: 10.1pt;
-      line-height: 1.68;
-    }
+  .name {
+    font-family: var(--sans);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: var(--ink);
+    line-height: 1;
+  }
 
-    .eyebrow {
-      margin-bottom: 7px;
-      color: var(--accent);
-      font-size: 7.7pt;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+  .name-en {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ink3);
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+  }
 
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin: 0 0 11px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid var(--ink);
-    }
-    .section-title span:first-child {
-      color: var(--ink);
-      font-size: 11.5pt;
-      font-weight: 680;
-    }
-    .section-title span:last-child {
-      color: var(--muted);
-      font-size: 8.2pt;
-    }
+  .header-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
 
-    .job { margin-bottom: 16px; }
-    .job-head {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: baseline;
-      gap: 14px;
-      margin-bottom: 5px;
-    }
-    .job-company { color: var(--ink); font-size: 10.7pt; font-weight: 680; }
-    .job-role { margin-left: 7px; color: var(--muted); font-size: 8.7pt; }
-    .job-date { color: var(--muted); font-size: 8.4pt; font-weight: 580; white-space: nowrap; }
-    .job-summary { margin-bottom: 7px; color: #555b63; font-size: 9.1pt; }
-    .job ul { margin: 0 0 0 17px; padding: 0; }
-    .job li { margin: 5px 0; padding-left: 2px; font-size: 9.15pt; }
-    .job li::marker { color: var(--accent); }
-    .job li strong { font-weight: 650; }
-    .project-name { color: var(--ink); font-weight: 680; }
-    .project-desc { color: var(--muted); }
-    .page:first-child .job { margin-bottom: 20px; }
-    .page:first-child .job-summary { font-size: 9.3pt; line-height: 1.62; }
-    .page:first-child .job li { margin: 6px 0; font-size: 9.25pt; line-height: 1.6; }
+  .contact-row {
+    display: flex;
+    gap: 20px;
+  }
 
-    .bottom-grid {
-      display: grid;
-      grid-template-columns: 1.45fr 1fr;
-      gap: 22px;
-      margin-top: 18px;
-      padding-top: 12px;
-      border-top: 1px solid var(--ink);
-    }
-    .bottom-grid h3 {
-      margin-bottom: 6px;
-      font-size: 9.2pt;
-      font-weight: 680;
-    }
-    .plain-list { margin: 0; color: #5c626b; font-size: 8.7pt; line-height: 1.65; }
+  .contact-item {
+    font-size: 12.5px;
+    color: var(--ink3);
+    text-decoration: none;
+    letter-spacing: 0.1px;
+  }
 
-    .page-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--ink);
-    }
-    .page-head .small-name { color: var(--ink); font-size: 10pt; font-weight: 680; }
-    .page-head .small-role { color: var(--muted); font-size: 8.2pt; }
+  .contact-item:hover { color: var(--accent); }
 
-    .page-intro { padding: 15px 0 12px; }
-    .page-intro h1 {
-      margin-bottom: 7px;
-      font-size: 20pt;
-      font-weight: 650;
-      line-height: 1.3;
-    }
-    .page-intro p {
-      max-width: 670px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 9.25pt;
-    }
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
 
-    .case {
-      padding: 15px 0 16px;
-      border-top: 1px solid var(--ink);
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-    .case:first-of-type { border-top-width: 2px; }
-    .case-head {
-      display: grid;
-      grid-template-columns: 40px 1fr auto;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    .case-no { color: var(--accent); font-size: 8pt; font-weight: 750; }
-    .case-title { margin: 0; font-size: 12.4pt; font-weight: 680; line-height: 1.35; }
-    .case-meta { color: var(--muted); font-size: 7.9pt; white-space: nowrap; }
-    .case-product {
-      grid-column: 2 / 4;
-      margin: 2px 0 0;
-      color: var(--muted);
-      font-size: 8.4pt;
-      line-height: 1.45;
-    }
+  .meta-chip {
+    font-size: 12px;
+    color: var(--ink3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 
-    .case-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr 1.22fr;
-      gap: 0;
-    }
-    .case-col { padding-right: 14px; }
-    .case-col + .case-col { padding-left: 14px; border-left: 1px solid var(--line); }
-    .case-col:last-child { padding-right: 0; }
-    .case-label {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--accent);
-      font-size: 7.5pt;
-      font-weight: 750;
-      letter-spacing: 0.05em;
-    }
-    .case-col p { margin-bottom: 0; font-size: 9pt; line-height: 1.59; text-align: left; }
-    .case-col p + p { margin-top: 7px; }
+  .meta-chip strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
 
-    .case.compact { padding: 13px 0 14px; }
-    .case.compact .case-head { margin-bottom: 8px; }
-    .case.compact .case-col p { font-size: 8.8pt; line-height: 1.52; }
+  /* ── Section ── */
+  .section {
+    margin-bottom: 44px;
+  }
 
-    .collaboration {
-      margin-top: 10px;
-      padding-top: 12px;
-      border-top: 1px solid var(--ink);
-    }
-    .collaboration h2 { margin-bottom: 6px; font-size: 10.4pt; font-weight: 680; }
-    .collaboration p { max-width: 700px; margin-bottom: 0; color: #555b63; font-size: 8.95pt; line-height: 1.6; }
+  .section-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
 
-    .activity-list { border-top: 1px solid var(--ink); }
-    .activity {
-      display: grid;
-      grid-template-columns: 86px 1fr;
-      gap: 18px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .activity-date { color: var(--accent); font-size: 8pt; font-weight: 720; }
-    .activity h2 { margin: 0 0 4px; font-size: 11.3pt; font-weight: 680; line-height: 1.4; }
-    .activity p { margin: 0; color: #555b63; font-size: 9.15pt; line-height: 1.6; }
+  /* ── Profile ── */
+  .profile {
+    font-size: 13.5px;
+    color: var(--ink2);
+    line-height: 1.85;
+    max-width: 680px;
+  }
 
-    .credentials {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      margin-top: 22px;
-      border-top: 1px solid var(--ink);
-      border-bottom: 1px solid var(--line);
-    }
-    .credential { padding: 15px 16px 16px 0; }
-    .credential + .credential { padding-left: 18px; border-left: 1px solid var(--line); }
-    .credential h2 { margin: 0 0 5px; font-size: 9.7pt; font-weight: 680; }
-    .credential p { margin: 0; color: #555b63; font-size: 8.9pt; line-height: 1.55; }
+  /* ── Experience ── */
+  .exp {
+    border-top: 1px solid var(--rule);
+    padding-top: 22px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0 32px;
+  }
 
-    .page-number {
-      position: absolute;
-      right: 18mm;
-      bottom: 8mm;
-      color: #9aa0a8;
-      font-size: 7.2pt;
-    }
+  .exp:last-child { margin-bottom: 0; }
 
-    @media print {
-      body { background: #fff; }
-      .page { margin: 0; box-shadow: none; }
-    }
-  </style>
+  .exp-left {}
+
+  .exp-period {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink4);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .exp-type {
+    font-size: 11.5px;
+    color: var(--ink3);
+    font-weight: 500;
+  }
+
+  .exp-progression {
+    font-size: 11px;
+    color: var(--ink4);
+    line-height: 2;
+  }
+
+  .exp-progression span {
+    display: block;
+  }
+
+  .exp-progression span.current {
+    color: var(--ink3);
+    font-weight: 500;
+  }
+
+  .exp-intro {
+    font-size: 12.5px;
+    color: var(--ink3);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  .exp-right {}
+
+  .exp-company {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+    letter-spacing: -0.3px;
+  }
+
+  .exp-role {
+    font-size: 12.5px;
+    color: var(--ink3);
+    margin-bottom: 12px;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+
+  .stack-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink3);
+    border: 1px solid var(--rule);
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: #fafafa;
+  }
+
+  .bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bullets li {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.75;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--ink4);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ── Achievement ── */
+  .ach {
+    border-top: 1px solid var(--rule);
+    padding-top: 22px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0 32px;
+  }
+
+  .ach:last-child { margin-bottom: 0; }
+
+  .ach-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink4);
+    padding-top: 3px;
+  }
+
+  .ach-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .ach-body {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .ach-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ach-points li {
+    font-size: 12.5px;
+    color: var(--ink2);
+    line-height: 1.75;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .ach-points li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--ink4);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .ach-sub {
+    margin-bottom: 10px;
+  }
+
+  .ach-sub-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .ach-sub-body {
+    font-size: 12.5px;
+    color: var(--ink3);
+    line-height: 1.75;
+    padding-left: 0;
+  }
+
+  .highlight {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .result-block {
+    background: #f7f8fc;
+    border-left: 2px solid var(--accent);
+    padding: 12px 16px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .result-block p {
+    font-size: 12.5px;
+    color: var(--ink2);
+    line-height: 1.7;
+  }
+
+  /* ── Perf Table ── */
+  .perf-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .perf-table th {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--ink4);
+    text-align: left;
+    padding: 6px 12px 6px 0;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: 0.5px;
+  }
+
+  .perf-table td {
+    padding: 7px 12px 7px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--ink2);
+    vertical-align: middle;
+  }
+
+  .perf-table td:first-child {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink3);
+  }
+
+  .perf-before {
+    font-family: var(--mono);
+    color: var(--ink4);
+    text-decoration: line-through;
+    margin-right: 6px;
+  }
+
+  .perf-after {
+    font-family: var(--mono);
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .perf-delta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+  }
+
+  /* ── Bottom ── */
+  .footer-grid {
+    border-top: 1px solid var(--rule);
+    padding-top: 22px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0 32px;
+  }
+
+  .footer-right {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 0.8fr;
+    gap: 24px;
+  }
+
+  .footer-block-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .footer-block p {
+    font-size: 12.5px;
+    color: var(--ink2);
+    line-height: 1.8;
+  }
+
+  .footer-block strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  @media print {
+    .page { padding: 40px 48px; }
+    body { font-size: 12.5px; }
+  }
+</style>
 </head>
 <body>
-  <main>
-    <section class="page">
-      <header class="masthead">
-        <div>
-          <h1 class="name">정소원</h1>
-          <div class="role">Frontend Developer · 5년차</div>
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div>
+        <div class="name">정소원</div>
+        <div class="name-en">Sowon Jung</div>
+      </div>
+      <div class="header-contacts">
+        <div class="contact-row">
+          <span class="contact-item">010-9349-1709</span>
+          <a class="contact-item" href="mailto:swj960515@gmail.com">swj960515@gmail.com</a>
         </div>
-        <div class="contact">
-          <a href="tel:01093491709">010-9349-1709</a> · <a href="mailto:swj960515@gmail.com">swj960515@gmail.com</a><br>
-          <a href="https://github.com/ss-won">github.com/ss-won</a> · <a href="https://velog.io/@ss-won">velog.io/@ss-won</a>
+        <div class="contact-row">
+          <a class="contact-item" href="https://github.com/ss-won" target="_blank">github.com/ss-won</a>
+          <a class="contact-item" href="https://velog.io/@ss-won" target="_blank">velog.io/@ss-won</a>
         </div>
-      </header>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span class="meta-chip"><strong>Frontend Developer</strong></span>
+      <span class="meta-chip">·</span>
+      <span class="meta-chip">경력 <strong>5년</strong></span>
+    </div>
+  </header>
 
-      <section class="hero">
-        <div class="eyebrow">소개</div>
-        <p>React와 TypeScript를 주로 사용하는 5년차 프론트엔드 개발자입니다. AI 데이터 분석 플랫폼과 Web3 제품에서 WebView와 BFF를 개발하고, Blockscout 기반 탐색기의 유지보수와 성능 개선을 맡았습니다. 사용자 흐름과 운영 제약을 함께 고려해야 하는 금융 제품에 관심이 있습니다.</p>
-      </section>
+  <!-- Profile -->
+  <section class="section">
+    <div class="section-label">Profile</div>
+    <p class="profile">
+      React·TypeScript 기반 5년차 프론트엔드 개발자입니다. 크립토 자산 지갑(Pockie), DeFi DApp(BiFi·BTCFi), 블록 탐색기(Bifrost Explorer), AI 데이터 분석 플랫폼(ThanoSQL)에서 제품 화면 구현, BFF 연동, 성능 개선, 테스트 자동화를 담당했습니다. 병목을 찾아 개선하는 과정을 좋아하고, 필요하면 BFF·FastAPI처럼 프론트엔드 바깥 영역도 직접 다룹니다. 기술적인 토론을 즐기고, 모르는 것을 편하게 물어볼 수 있는 분위기에서 가장 잘 일합니다.
+    </p>
+  </section>
 
-      <section>
-        <div class="section-title">
-          <span>경력</span>
-          <span>2021.07 – 현재</span>
+  <!-- Experience -->
+  <section class="section">
+    <div class="section-label">Experience</div>
+
+    <div class="exp">
+      <div class="exp-left">
+        <div class="exp-period">2024.09 — 현재</div>
+        <div class="exp-type">Frontend Developer</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-company">파이랩테크놀로지</div>
+        <div class="exp-role">Frontend Developer</div>
+        <p class="exp-intro">Pockie 모바일 지갑/WebView 거래 제품, BTCFi 예치 상품, Bifrost Explorer의 제품 개발·운영 개선을 담당하고, 사내 Slack 기반 AI Agent(금쪽이)의 코드 리뷰 자동화 workflow를 개선했습니다. 주요 업무는 거래 화면 구현, 데이터 조회 구조 개선, 성능 최적화, 테스트 자동화, 품질 게이트 구성입니다.</p>
+        <div class="stack">
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">TanStack Query</span>
+          <span class="stack-tag">Jotai</span>
+          <span class="stack-tag">NestJS</span>
+          <span class="stack-tag">wagmi · viem</span>
+          <span class="stack-tag">Chakra UI</span>
+          <span class="stack-tag">Vitest</span>
+          <span class="stack-tag">Playwright</span>
+          <span class="stack-tag">Sentry</span>
+        </div>
+        <ul class="bullets">
+          <li>Mobile App·Chrome Extension에서 동일한 BTCFi·Swap WebView 거래 화면을 재사용할 수 있도록 공통 UI 번들, postMessage 연동, BFF API 기반 거래 상태 조회 구조 구현</li>
+          <li>여러 RPC·외부 endpoint에 혼재돼 있던 사내 운영 DApp(BiFi, BTCFi, Swap, Gas Top-up)의 비즈니스 로직을 BFF 계약·TanStack Query hook 기반으로 통합해 WebView miniDApp별 거래 책임과 데이터 조회 경계 정리</li>
+          <li>JPYC 스테이블코인의 예치·인출·수익 청구를 지원하는 BTCFi 파트너 제품 — 정책·수명주기가 다른 파트너 플로우를 하나의 제품 코어 위에서 운영하도록 구현하고, 비동기 입금·복구·epoch 출금·진행 대시보드를 초기 구축부터 릴리스까지 담당</li>
+          <li>Blockscout 기반 Bifrost Explorer — 브릿지 필터, Next.js App Router 전환, 목록 화면 성능 개선, 테스트넷·메인넷별 Docker image 재사용을 위한 런타임 환경변수 주입 구조 전환</li>
+          <li>사내 Slack 기반 AI Agent(금쪽이) 코드 리뷰 workflow를 구성하고, 리뷰 근거·confidence verifier·Jira 티켓 검증·CI/테스트/타입/high severity 품질 게이트를 연결해 AI 리뷰 결과의 신뢰도와 운영 안전성을 개선</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-left">
+        <div class="exp-period">2021.07 — 2024.09</div>
+        <div class="exp-progression">
+          <span>Full-stack Engineer</span>
+          <span>→ Frontend Developer</span>
+          <span class="current">→ Frontend Part Leader</span>
+        </div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-company">스마트마인드</div>
+        <div class="exp-role">Frontend Developer</div>
+        <p class="exp-intro">고객 온프레미스 환경에서 ThanoSQL 분석 기능을 웹으로 사용할 수 있도록 JupyterLab Workspace, SQL Editor, Query Viewer를 개발했습니다. 프론트엔드 파트 리더로서 앱·공통 컴포넌트 중심의 pnpm/Turborepo 모노레포 구조를 구성했습니다.</p>
+        <div class="stack">
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Monaco Editor</span>
+          <span class="stack-tag">ANTLR</span>
+          <span class="stack-tag">pnpm · Turborepo</span>
+          <span class="stack-tag">Playwright</span>
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">Docker Compose</span>
+        </div>
+        <ul class="bullets">
+          <li>ThanoSQL AI 데이터 분석 플랫폼 — 개발 도구가 초기화된 JupyterLab Workspace와 ThanoSQL 테이블 생성·조회용 SQL Editor를 개발하고, 정형·비정형 데이터 질의 흐름을 웹 제품 안에서 구성</li>
+          <li>AI 팀이 정의한 ANTLR 문법을 Monaco Editor에 연결해 SQL 구문 강조·문법 오류 진단·키워드 자동완성을 제공하는 재사용 편집기 컴포넌트 개발</li>
+          <li>비정형 데이터(이미지·오디오·비디오) Query Viewer에 서버 페이지네이션·가상화·미디어 lazy loading 적용해 대용량 조회 화면 렌더링 부담 감소</li>
+          <li>앱 단위 라우트로 분산된 개발 구조를 pnpm·Turborepo 기반 모노레포와 공용 UI·유틸 패키지 구조로 정리 — 패키지 빌드 분리·빌드 캐시 활용·npm에서 pnpm 전환으로 평균 빌드 시간 <span class="highlight">7분 → 1분</span> 단축</li>
+          <li>에너지 예측 정부과제(P2P-DC) — AI 팀이 파인튜닝한 PyTorch .pt 모델을 서빙하는 FastAPI 구현, Docker Compose 배포 환경 구성</li>
+          <li>프론트엔드 파트 리더 — 일정 관리, 업무 분배, 팀원 온보딩, 코드 리뷰</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Achievements -->
+  <section class="section">
+    <div class="section-label">Key Achievements</div>
+
+    <div class="ach">
+      <div class="ach-num">01 /</div>
+      <div>
+        <div class="ach-title">프론트엔드 성능 병목 개선</div>
+        <p class="ach-body">Gas Top-up·BiFi WebView의 데이터 조회 범위·중복 호출 구조를 정리하고, Bifrost Explorer 목록 화면의 초기 렌더링 범위와 WebSocket 이벤트 처리 방식을 조정했습니다.</p>
+
+        <div class="ach-sub">
+          <div class="ach-sub-title">Gas Top-up 호출 구조 단순화</div>
+          <div class="ach-sub-body">보유 자산 수에 비례하던 자산·잔액 조회를 지원 토큰 기준 조회로 정리하고, vault address·network asset·SDK 중복 의존 제거</div>
         </div>
 
-        <article class="job">
-          <div class="job-head">
-            <div><span class="job-company">파이랩테크놀로지 · Bifrost Platform</span><span class="job-role">Frontend Developer</span></div>
-            <span class="job-date">2024.09 – 현재</span>
-          </div>
-          <p class="job-summary">Pockie 지갑의 모바일·Chrome Extension 환경에서 BTCFi 제품과 Swap WebView를 개발하고, NestJS BFF를 구현했습니다. Blockscout 기반 사내 탐색기는 유지보수와 기능 개선, 오픈소스 업데이트 반영을 담당했으며 Slack AI 자동 리뷰 워크플로우도 구축했습니다.</p>
-          <ul>
-            <li><span class="project-name">BTCFi Partners</span> <span class="project-desc">· JPYC 스테이블코인의 예치·인출·수익 청구를 지원하는 파트너용 제품.</span> 사내 컨트랙트 팀의 금융 전략과 파트너 요구사항에 맞춰 개발했고, DJT 조직형 비동기 지갑을 위해 EIP-5792와 processId 기반 진행 상태 추적 흐름을 검토·제안했습니다.</li>
-            <li><span class="project-name">Bifrost Explorer</span> <span class="project-desc">· Blockscout을 fork해 운영하는 사내 블록·트랜잭션·토큰 탐색기.</span> 입사 후 이어받아 유지보수, 브릿지 내역 필터 기능과 선택적 upstream 업데이트 반영을 담당했습니다. 첫 화면 테이블의 초기 렌더링 성능을 개선했습니다.</li>
-            <li><span class="project-name">Pockie WebView &amp; BFF</span> <span class="project-desc">· Pockie 지갑의 모바일·Chrome Extension 환경에서 BTCFi·Swap을 제공하는 WebView 제품.</span> 동료 한 명과 분산된 API와 RPC 호출을 NestJS BFF로 묶고, BTCFi 대시보드와 Swap BFF 구현을 맡았습니다.</li>
-            <li><span class="project-name">Donald</span> <span class="project-desc">· 코드 리뷰·리서치 등을 지원하는 사내 Slack AI 도구.</span> 새 Pull Request를 자동 리뷰하고, 리뷰 근거와 confidence를 검증하는 verifier를 추가했습니다. CI·테스트·타입 오류와 high severity 이슈가 없을 때만 자동 approve되도록 workflow를 구축했습니다.</li>
-          </ul>
-        </article>
-
-        <article class="job">
-          <div class="job-head">
-            <div><span class="job-company">스마트마인드</span><span class="job-role">Full-stack Developer → Frontend Developer → Frontend Part Leader</span></div>
-            <span class="job-date">2021.07 – 2024.09</span>
-          </div>
-          <p class="job-summary">AI 데이터 분석 플랫폼 ThanoSQL의 웹 제품과 개발 환경을 담당했습니다. 2023년부터 퇴사 전까지 프론트엔드 파트의 업무 스크럼과 기술 논의를 진행했고, 초기에는 정부과제와 광고 데이터 PoC에도 참여했습니다.</p>
-          <ul>
-            <li><span class="project-name">ThanoSQL</span> <span class="project-desc">· SQL과 Python으로 데이터를 분석하고 AI 모델을 실행하는 온프레미스 플랫폼.</span> SQL Editor·JupyterLab·Query Manager를 Workspace로 연결하고 SQL 편집·조회 기능을 개발했습니다. pnpm과 Turborepo를 도입해 공용 UI·아이콘·유틸 패키지와 빌드 환경을 정리했습니다.</li>
-            <li><span class="project-name">P2P-DC</span> <span class="project-desc">· 에너지 예측 모델을 제공하는 정부과제 PoC.</span> AI 팀의 예측 모델을 클라이언트에서 조회할 수 있도록 FastAPI API를 구현했습니다.</li>
-            <li><span class="project-name">M.AD.E</span> <span class="project-desc">· 광고 지표를 수집·전처리하는 마케팅 PoC.</span> Google·Facebook Ads API에서 필요한 지표를 수집해 자사 데이터 형식으로 전처리했습니다.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="bottom-grid">
-        <div>
-          <h3>기술</h3>
-          <p class="plain-list"><strong>Frontend</strong> · TypeScript, React, Next.js, React Query, Vite, Vitest, Playwright<br><strong>Backend / Tools</strong> · Node.js, NestJS, FastAPI, Sentry, Docker, GitHub Actions</p>
+        <div class="ach-sub">
+          <div class="ach-sub-title">BiFi bridge pair 조회 구조 개선</div>
+          <div class="ach-sub-body">네트워크별 반복 조회(<span class="highlight">1+N</span>회)를 outbound/inbound <span class="highlight">2회</span> 캐시 조회로 축소</div>
         </div>
-        <div>
-          <h3>학력</h3>
-          <p class="plain-list">가천대학교 컴퓨터공학과 · 3.98 / 4.5</p>
+
+        <div class="ach-sub">
+          <div class="ach-sub-title">Bifrost Explorer 목록 렌더링 최적화</div>
+          <div class="ach-sub-body">최대 75행 조건에서 가상화의 mount/unmount 비용이 더 커 제거 — 초기 렌더링 범위 제한·단계적 렌더링·WebSocket 30초 배치 처리 적용</div>
         </div>
-      </section>
 
-      <div class="page-number">01 / 03</div>
-    </section>
+        <table class="perf-table">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>LCP (before → after)</th>
+              <th>TBT (before → after)</th>
+              <th>개선</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>/blocks</td>
+              <td><span class="perf-before">3.7s</span><span class="perf-after">1.9s</span></td>
+              <td><span class="perf-before">1,010ms</span><span class="perf-after">270ms</span></td>
+              <td><span class="perf-delta">LCP ↓49% · TBT ↓73%</span></td>
+            </tr>
+            <tr>
+              <td>/txs</td>
+              <td><span class="perf-before">3.7s</span><span class="perf-after">2.2s</span></td>
+              <td><span class="perf-before">1,330ms</span><span class="perf-after">200ms</span></td>
+              <td><span class="perf-delta">LCP ↓41% · TBT ↓85%</span></td>
+            </tr>
+            <tr>
+              <td>/tokens</td>
+              <td><span class="perf-before">3.3s</span><span class="perf-after">1.8s</span></td>
+              <td><span class="perf-before">510ms</span><span class="perf-after">190ms</span></td>
+              <td><span class="perf-delta">LCP ↓45% · TBT ↓63%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-    <section class="page">
-      <header class="page-head">
-        <span class="small-name">정소원</span>
-        <span class="small-role">Frontend Developer · 5년차</span>
-      </header>
+    <div class="ach">
+      <div class="ach-num">02 /</div>
+      <div>
+        <div class="ach-title">모바일 WebView 거래 제품 구현</div>
+        <p class="ach-body">Mobile App/Chrome Extension에서 같은 WebView 거래 화면을 재사용할 수 있도록 BFF 계약 기반 책임 경계를 정리하고, 파트너사(Hashport Wallet)와 postMessage 이벤트를 협의·설계해 widget route로 WebView/일반 웹 접근을 분리했습니다.</p>
 
-      <section class="page-intro">
-        <div class="eyebrow">상세 경험</div>
-        <h1>주요 프로젝트</h1>
-        <p>제품의 제약을 어떻게 해석하고, 어떤 선택을 거쳐 사용자 흐름과 운영 방식을 바꿨는지 정리했습니다.</p>
-      </section>
-
-      <article class="case">
-        <div class="case-head">
-          <span class="case-no">01</span>
-          <h2 class="case-title">BTCFi 파트너 입출금 흐름 개발</h2>
-          <span class="case-meta">BTCFi Partners · Hashport / DJT</span>
-          <p class="case-product">사내 컨트랙트 팀의 금융 전략과 파트너 요구사항에 맞춰 JPYC 스테이블코인의 예치·인출·수익 청구를 제공하는 B2B Web3 제품</p>
+        <div class="ach-sub">
+          <div class="ach-sub-title">BiFi·Swap·BTCFi WebView 거래 화면 구현</div>
+          <div class="ach-sub-body">BiFi 예치·출금·대출·상환 4개 화면, Swap 견적 조회·승인·거래 데이터 생성·상태 조회를 Pockie BFF API와 연결</div>
         </div>
-        <div class="case-grid">
-          <section class="case-col">
-            <span class="case-label">기존 제약</span>
-            <p>DJT 지갑은 요청을 board에 올린 뒤 승인자가 온체인 거래를 실행합니다. 서명 뒤 transfer txHash와 receipt를 확인하던 기존 입금 흐름으로는, 비동기 지갑의 완료 시점을 다음 단계로 넘길 수 없었습니다.</p>
-          </section>
-          <section class="case-col">
-            <span class="case-label">선택한 흐름</span>
-            <p>intent·webhook은 추적에는 유리했지만 endpoint와 검증 계층, 기존 흐름의 변경이 컸습니다. EIP-5792 clientId에 processId를 담아 지갑 상태를 조회하고, transfer 뒤 서명·제출을 잇는 방식을 제안했습니다.</p>
-          </section>
-          <section class="case-col">
-            <span class="case-label">사용자 흐름의 변화</span>
-            <p>명시적 실패가 아니면 process를 유지해, active process와 AA 잔액을 기준으로 재진입 후 서명·제출을 이어갈 수 있게 했습니다. Hashport에서는 WebView 구현과 파트너 커뮤니케이션을 맡았습니다.</p>
-          </section>
+        <div class="ach-sub">
+          <div class="ach-sub-title">WebView 거래 책임 분리</div>
+          <div class="ach-sub-body">거래 화면은 BFF 계약을 소비하고, 지갑 서명·전송은 Mobile App 또는 Chrome Extension의 호스트 지갑에 위임하는 구조로 정리 — 같은 WebView 거래 화면을 여러 호스트에서 재사용</div>
         </div>
-      </article>
-
-      <article class="case compact">
-        <div class="case-head">
-          <span class="case-no">02</span>
-          <h2 class="case-title">Bifrost Explorer 테이블 성능 개선</h2>
-          <span class="case-meta">Bifrost Explorer</span>
-          <p class="case-product">Blockscout을 fork해 운영하는 사내 블록·트랜잭션·토큰 탐색기. 입사 후 유지보수, 기능 개선과 upstream 오픈소스 업데이트 반영을 담당</p>
+        <div class="ach-sub">
+          <div class="ach-sub-title">플랫폼·버전별 출시 제어</div>
+          <div class="ach-sub-body">iOS·Android·Extension 및 앱 버전별 feature flag와 하위 호환 fallback을 BFF config v2에 구현 — 클라이언트 배포 없이 기능 노출 서버 제어</div>
         </div>
-        <div class="case-grid">
-          <section class="case-col">
-            <span class="case-label">병목</span>
-            <p>blocks·transactions·tokens 첫 화면은 실시간 데이터와 함께 시간 계산, 막대 차트, 이미지 등 비용이 큰 행을 렌더링했습니다. 초기 표시가 느리고, 화면에 보이기 전부터 렌더링 비용이 쌓였습니다.</p>
-          </section>
-          <section class="case-col">
-            <span class="case-label">버린 접근</span>
-            <p>가상화를 먼저 적용했지만 행 자체가 무거워 스크롤 때 재렌더링과 빈 화면이 더 자주 보였고, 초기 표시도 크게 나아지지 않았습니다. 이미 그린 행을 유지하는 점진 렌더링으로 방향을 바꿨습니다.</p>
-          </section>
-          <section class="case-col">
-            <span class="case-label">렌더링 전략</span>
-            <p>초기에는 최대 10개와 여유 5개 행만 보여주고, 이후에는 infinite scroll과 부분 skeleton으로 연결했습니다. 고비용 UI는 지연 로딩하고 WebSocket 이벤트는 30초 단위로 묶어 초기 표시 지연과 스크롤 중 빈 화면을 줄였습니다.</p>
-          </section>
+
+        <div class="result-block">
+          <p>Mobile App·Chrome Extension에서 동일한 BiFi·Swap·BTCFi 거래 화면 재사용 구조 구현</p>
+          <p>BTCFi Partners · Hashport Wallet WebView — 출시 3개월간 일본 액티브 유저 <span class="highlight">750명대</span>, 실제 입금 <span class="highlight">1억 엔대</span> 운영 중</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="case compact">
-        <div class="case-head">
-          <span class="case-no">03</span>
-          <h2 class="case-title">Pockie WebView·BFF 개발</h2>
-          <span class="case-meta">Pockie · BTCFi / Swap</span>
-          <p class="case-product">Pockie 지갑의 모바일·Chrome Extension 환경에서 BTCFi와 Swap 기능을 제공하는 WebView 제품</p>
+    <div class="ach">
+      <div class="ach-num">03 /</div>
+      <div>
+        <div class="ach-title">사내 AI Agent 런타임 개선</div>
+        <p class="ach-body">사내 Slack 기반 AI Agent(금쪽이)의 컨텍스트 주입, 도구 실행, 권한 통제, 감사 로그 구조를 개선했습니다. 단순한 자동화 결과보다 사람이 최종 확인하는 운영 원칙 안에서 AI가 검토·요약·검증을 보조하도록 만드는 구조에 초점을 맞췄습니다.</p>
+
+        <div class="ach-sub">
+          <div class="ach-sub-title">컨텍스트 주입 구조 개선</div>
+          <div class="ach-sub-body">메모리·프롬프트 주입 구조를 core memory와 MCP on-demand search로 분리하고, 요청별 변동 정보를 프롬프트 tail로 이동해 정적 prefix가 안정적으로 유지되도록 개선. 메모리 주입 예산·우선순위 절단·관측 로그를 추가해 요청별 컨텍스트 주입량을 통제 가능한 구조로 정리</div>
         </div>
-        <div class="case-grid">
-          <section class="case-col">
-            <span class="case-label">공통 UI 환경</span>
-            <p>공통 UI bundle을 별도로 배포하고 모바일·Chrome Extension에서 불러왔습니다. postMessage와 Jotai external store로 지갑 상태와 거래 내역을 전달·동기화했고, 모바일 stack view의 상태 반응과 페이지 전환을 조정했습니다.</p>
-          </section>
-          <section class="case-col">
-            <span class="case-label">호출 경계</span>
-            <p>여러 외부 API와 RPC 호출이 프론트엔드에 흩어져 비즈니스 로직과 캐시 관리가 복잡했습니다. 동료와 endpoint·디렉터리·캐시·에러 모델을 맞춘 뒤, 화면 단위로 조합할 호출을 NestJS BFF로 옮겼습니다.</p>
-          </section>
-          <section class="case-col">
-            <span class="case-label">내 구현과 변화</span>
-            <p>BTCFi 대시보드 BFF와 Swap BFF 구현을 맡았습니다. 신규 WebView에서는 관리할 endpoint와 의존 지점이 줄어, 제품 흐름을 따라가며 디버깅하기 수월해졌습니다.</p>
-          </section>
+        <div class="ach-sub">
+          <div class="ach-sub-title">자동 리뷰 workflow와 품질 게이트 구성</div>
+          <div class="ach-sub-body">Slack 기반 코드 리뷰 흐름에 리뷰 근거·confidence verifier를 추가하고, commit/PR에 Jira 티켓 형식이 포함된 경우 실제 이슈 정보를 읽어 추가 검증. CI·테스트·타입 오류·high severity 이슈가 없고 팀 기준을 충족한 경우에만 자동 승인 후보로 분류, 최종 결과물은 사람이 확인하는 운영 원칙 유지</div>
         </div>
-      </article>
+        <div class="ach-sub">
+          <div class="ach-sub-title">MCP 도구 실행 구조 개선</div>
+          <div class="ach-sub-body">Claude Agent SDK의 stdio 기반 MCP 중복 실행 구조를, 사용 가능한 tool 목록 조회 후 필요한 도구만 동적으로 선택·재사용하는 dynamic tools 구조로 전환. 병렬 호출 시 MCP 서버 중복 실행 부담 감소</div>
+        </div>
+        <div class="ach-sub">
+          <div class="ach-sub-title">Codex app server 전환과 read/write mode 통합</div>
+          <div class="ach-sub-body">Claude Agent SDK 의존 런타임을 Codex app server 기반으로 전환하면서 read/write tool 권한을 별도 mode로 나누던 구조를 통합. 기존 classifier는 LLM 호출 비용·대기 시간이 추가되고 오탐 시 write mode로 이어지지 않는 한계가 있었음. mode 통합 후 write tool 사용 시 보안 effective gate와 감사 로그를 거치도록 재설계</div>
+        </div>
+        <div class="ach-sub">
+          <div class="ach-sub-title">프롬프트 인젝션·외부 코드 실행 방어와 감사 로그</div>
+          <div class="ach-sub-body">write 작업에서 prompt injection·Slack 계정 탈취로 민감 도구가 악용될 수 있는 경로를 줄이기 위해 보안 gate 강화. 조직 repo 외부 코드를 임의로 clone·실행하지 않도록 제한하고, npm package 전역 업데이트처럼 환경을 오염시킬 수 있는 작업은 workspace sandbox로 격리. 차단 사유와 도구 호출 맥락은 감사 채널과 tool call journal에 기록</div>
+        </div>
 
-      <div class="page-number">02 / 03</div>
-    </section>
+        <div class="result-block">
+          <p>코드 리뷰 근거·Jira 티켓 검증·품질 게이트를 연결한 자동 리뷰 workflow 구성</p>
+          <p>요청별 컨텍스트 주입량과 MCP 도구 실행 범위를 관측·통제 가능한 구조로 정리</p>
+          <p>Codex app server 기반 전환과 effective gate 판단으로 런타임 비용·승인 UX·권한 모델 개선</p>
+          <p>prompt injection·외부 코드 실행·전역 package 변경 리스크를 workspace sandbox와 감사 로그로 통제</p>
+        </div>
+      </div>
+    </div>
 
-    <section class="page">
-      <header class="page-head">
-        <span class="small-name">정소원</span>
-        <span class="small-role">Frontend Developer · 5년차</span>
-      </header>
+  </section>
 
-      <section class="page-intro">
-        <div class="eyebrow">보조 자료</div>
-        <h1>외부 활동</h1>
-        <p>직무 경력 외에 참여한 오픈소스와 개발 커뮤니티 활동입니다.</p>
-      </section>
+  <!-- Footer -->
+  <div class="footer-grid">
+    <div class="section-label" style="padding-top:0;">Education &amp; More</div>
+    <div class="footer-right">
+      <div class="footer-block">
+        <div class="footer-block-title">Education</div>
+        <p><strong>가천대학교</strong><br>컴퓨터공학과<br><span style="font-family:'DM Mono',monospace;font-size:12px;color:#767676;">GPA 3.98 / 4.5</span></p>
+      </div>
+      <div class="footer-block">
+        <div class="footer-block-title">Certifications &amp; Activities</div>
+        <p><strong>정보처리기사</strong> 2019</p>
+        <p><strong>OSSCA</strong> — TS Handbook 한글화 (2020), githru-vscode-ext (2023)</p>
+        <p><strong>SmileGate Membership</strong> AI 1기 (2021)</p>
+        <p><strong>AUSG</strong> 1기 (2019)</p>
+      </div>
+      <div class="footer-block">
+        <div class="footer-block-title">Languages</div>
+        <p><strong>영어</strong> — 기초 비즈니스</p>
+        <p><strong>일본어</strong> — 기초 비즈니스 <span style="font-family:'DM Mono',monospace;font-size:11.5px;color:#767676;">(JLPT N3)</span></p>
+      </div>
+    </div>
+  </div>
 
-      <section class="activity-list">
-        <article class="activity">
-          <span class="activity-date">2020</span>
-          <div>
-            <h2>OSSCA · TypeScript Handbook 한글화</h2>
-            <p>Open Source Contribution Academy에서 Microsoft TypeScript Handbook 한국어 번역에 참여했습니다.</p>
-          </div>
-        </article>
-        <article class="activity">
-          <span class="activity-date">2023</span>
-          <div>
-            <h2>githru-vscode-ext 기능 개발</h2>
-            <p>OSSCA 활동으로 VS Code 확장 프로그램의 기능 개발에 참여했습니다.</p>
-          </div>
-        </article>
-        <article class="activity">
-          <span class="activity-date">2021</span>
-          <div>
-            <h2>SmileGate Membership · AI 1기</h2>
-            <p>AI 기반 웹 애플리케이션 프로젝트를 진행했습니다.</p>
-          </div>
-        </article>
-        <article class="activity">
-          <span class="activity-date">2019</span>
-          <div>
-            <h2>AUSG · AWS University Student Group 1기</h2>
-            <p>AWS 기술 커뮤니티 활동에 참여했습니다.</p>
-          </div>
-        </article>
-      </section>
-
-      <section class="credentials" aria-label="자격증 및 언어">
-        <article class="credential">
-          <h2>자격증</h2>
-          <p>정보처리기사</p>
-        </article>
-        <article class="credential">
-          <h2>언어</h2>
-          <p>영어 기초 비즈니스<br>일본어 기초 비즈니스 · JLPT N3</p>
-        </article>
-      </section>
-
-      <div class="page-number">03 / 03</div>
-    </section>
-  </main>
+</div>
 </body>
 </html>
