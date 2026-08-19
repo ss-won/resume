@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "description": "Cross-cutting engineering themes with evidence tags",
+    "evidence_levels": ["public", "redacted-internal", "self-attested", "derived"]
+  },
+  "themes": [
+    {
+      "id": "auth-delegation-postmessage",
+      "title": "권한 위임 경계 설계 (postMessage)",
+      "summary": "권한을 가진 쪽과 화면이 분리된 환경에서 postMessage로 인증·서명을 위임하는 구조를 두 회사에서 구현",
+      "evidence": "redacted-internal",
+      "companies": ["스마트마인드", "파이랩테크놀로지"],
+      "recurring": true,
+      "target_roles": ["WebView", "mobile-web", "frontend"]
+    },
+    {
+      "id": "transaction-amount-boundary",
+      "title": "거래 금액 경계 계산 + 가스 추정 통합",
+      "summary": "DeFi 제품 전반에서 최대/최소 거래 금액을 가스·수수료·정책과 통합 계산",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "recurring": true,
+      "target_roles": ["fintech", "web3", "defi"]
+    },
+    {
+      "id": "transaction-failure-recovery",
+      "title": "거래 실패 복구 / 자금·단계 고착 방지",
+      "summary": "서명 거부·중단·재진입 시 자금과 거래 단계 고립을 다층 복구 로직으로 방지",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "recurring": true,
+      "target_roles": ["fintech", "web3", "mobile-web"]
+    },
+    {
+      "id": "perf-api-optimization",
+      "title": "성능·API 호출 최적화",
+      "summary": "측정 기반 최적화: Lighthouse LCP 43~49% 개선, API 호출 수 감소, WebSocket 배치 처리",
+      "evidence": "redacted-internal",
+      "public_metrics": {
+        "explorer_lcp_reduction_pct": "43-49",
+        "explorer_tbt_reduction_pct": "63-85",
+        "app_api_calls_before": "25-46",
+        "app_api_calls_after": 17,
+        "webview_refetch_interval_before_s": 90,
+        "webview_refetch_interval_after_s": 30
+      },
+      "companies": ["파이랩테크놀로지", "스마트마인드"],
+      "recurring": true,
+      "target_roles": ["frontend-platform", "performance"]
+    },
+    {
+      "id": "web3-wallet-connection",
+      "title": "Web3 지갑 연결·전송 계층",
+      "summary": "EIP-6963, WalletConnect, 다중 프로바이더 연결·세션·체인 전환 설계·안정화",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "target_roles": ["web3", "wallet", "defi"]
+    },
+    {
+      "id": "e2e-test-infrastructure",
+      "title": "테스트 인프라·E2E 자동화",
+      "summary": "Jest→Vitest 전환, Playwright E2E (page object, network mocking, WebView, WebSocket)",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "target_roles": ["frontend", "platform", "mobile-web"]
+    },
+    {
+      "id": "observability",
+      "title": "관측성 (Sentry·LLM observability)",
+      "summary": "Sentry 거래 로깅 스키마, Langfuse LLM cost/feedback/token 관측",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "target_roles": ["platform", "ai-agent"]
+    },
+    {
+      "id": "large-scale-migration",
+      "title": "대규모 마이그레이션",
+      "summary": "Next.js 15 App Router 전환(983파일), AI Agent 런타임 전환(299파일)",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "target_roles": ["frontend-platform", "large-scale-web"]
+    },
+    {
+      "id": "security-hygiene",
+      "title": "플랫폼 전반 보안 위생",
+      "summary": "SSRF 방지·CVE 패치·PII 차단·iframe sandbox를 다수 저장소에 일괄 적용",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "target_roles": ["frontend-platform", "security"]
+    },
+    {
+      "id": "build-own-backend-layer",
+      "title": "필요한 계층을 직접 만드는 패턴",
+      "summary": "프론트엔드 소비자 관점에서 FastAPI·NestJS BFF를 직접 구현한 패턴이 두 회사에서 반복",
+      "evidence": "public",
+      "companies": ["스마트마인드", "파이랩테크놀로지"],
+      "recurring": true,
+      "target_roles": ["fullstack", "startup"]
+    },
+    {
+      "id": "ai-agent-runtime",
+      "title": "사내 AI Agent 런타임 설계",
+      "summary": "MCP tool 권한 게이트, dynamic tool 실행, Codex app server 전환, 감사 로그",
+      "evidence": "redacted-internal",
+      "companies": ["파이랩테크놀로지"],
+      "target_roles": ["ai-agent", "platform", "productivity"]
+    }
+  ]
+}
