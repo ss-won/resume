@@ -104,6 +104,15 @@
       "source": "velog (Smartmind) + resume (Explorer)",
       "interview_defensible": true,
       "interview_note": "같은 사람이 반대 결론을 내린 구체적 이유 설명 가능"
+    },
+    {
+      "id": "exp-pilab-figma-template-v2",
+      "text": "UI Kit 합성 컴포넌트(Tabs·Toast 등) 동적 children을 Template V2 API로 런타임 순회·재귀 합성, Code Connect CLI 연동해 Figma MCP 코드 생성 컨텍스트 정형화",
+      "evidence": "redacted-internal",
+      "repo": "ui-kit-front",
+      "caveat": "브랜치 전용 — main/develop 미병합. CLI 연동 완료, 자동화 미적용",
+      "interview_defensible": true,
+      "interview_note": "왜 Template V2가 필요했는지(정적 매핑 한계) → 어떻게 풀었는지(findLayers + executeTemplate) → 목적(MCP 컨텍스트 정형화) 순으로 설명. 브랜치 전용임을 먼저 밝힐 것"
     }
   ]
 }

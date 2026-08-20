@@ -64,6 +64,16 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 | Codex app server 기반 전환 | Redacted-internal | Donald repo PR 근거 |
 | prompt injection·외부 코드 실행·전역 package 변경 리스크 통제 | Redacted-internal | Donald repo PR 근거 |
 
+### UI Kit (디자인 시스템) — Figma Code Connect
+
+| 주장 | 레벨 | 비고 |
+|---|---|---|
+| 합성 컴포넌트의 동적 children을 정적 매핑으로 표현할 수 없어 Template V2 도입 | Redacted-internal | ui-kit-front 커밋 근거 (engineer-provided) |
+| 런타임에 인스턴스를 순회하고 자식 컴포넌트 템플릿을 재귀 실행 | Redacted-internal | Tabs·Toast `findConnectedInstances` + `executeTemplate` 확인 |
+| 20개 컴포넌트 중 14개에 동적 API 적용 | Redacted-internal | 커밋 분석으로 확인 |
+| Code Connect CLI와 연동해 Figma MCP 코드 생성 컨텍스트를 정형화 | Redacted-internal + Self-attested | CLI 연동은 `figma.template.config.json`으로 확인; MCP 컨텍스트 개선은 본인 확인 |
+| 해당 작업은 브랜치 전용 (main/develop 미병합) | Redacted-internal | PR 1건(v0.1.8 릴리즈)만 main 병합 |
+
 ---
 
 ## 스마트마인드 경력
