@@ -12,7 +12,7 @@ Recruiters, hiring managers, or AI assistants evaluating 정소원's background.
 - **Role:** Frontend Developer, ~5 years total experience
 - **Current:** 파이랩테크놀로지 (Bifrost Platform), 2024.09–present
 - **Previous:** 스마트마인드 (ThanoSQL), 2021.07–2024.09
-- **Core skills:** TypeScript · React · Next.js · Web3/EVM · NestJS BFF · Playwright E2E · AI agent runtime
+- **Core skills:** TypeScript · React · Next.js · Web3/EVM · NestJS BFF · Playwright E2E · AI agent runtime · Figma Code Connect (Template V2)
 - **Contact:** swj960515@gmail.com · github.com/ss-won · velog.io/@ss-won
 - **Resume (PDF):** https://ss-won.github.io/resume/sowon-jung-cv.pdf
 
