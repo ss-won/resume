@@ -1,9 +1,9 @@
 # 정소원 (Sowon Jung)
-Frontend Developer · 5년차 · 010-9349-1709 · swj960515@gmail.com · github.com/ss-won · velog.io/@ss-won
+Frontend Developer · 010-9349-1709 · swj960515@gmail.com · github.com/ss-won · velog.io/@ss-won
 
 ## 프로필
 
-React·TypeScript 기반 5년차 프론트엔드 개발자입니다. 크립토 자산 지갑(Pockie), DeFi DApp(BiFi·BTCFi), 블록 탐색기(Bifrost Explorer), AI 데이터 분석 플랫폼(ThanoSQL)에서 제품 화면 구현, BFF 연동, 성능 개선, 테스트 자동화를 담당했습니다. 병목을 찾아 개선하는 과정을 좋아하고, 필요하면 BFF·FastAPI처럼 프론트엔드 바깥 영역도 직접 다룹니다. 기술적인 토론을 즐기고, 모르는 것을 편하게 물어볼 수 있는 분위기에서 가장 잘 일합니다.
+React·TypeScript 기반 프론트엔드 개발자입니다. 크립토 자산 지갑(Pockie), DeFi DApp(BiFi·BTCFi), 블록 탐색기(Bifrost Explorer), AI 데이터 분석 플랫폼(ThanoSQL)에서 제품 화면 구현, BFF 연동, 성능 개선, 테스트 자동화를 담당했습니다. 병목을 찾아 개선하는 과정을 좋아하고, 필요하면 BFF·FastAPI처럼 프론트엔드 바깥 영역도 직접 다룹니다. 기술적인 토론을 즐기고, 모르는 것을 편하게 물어볼 수 있는 분위기에서 가장 잘 일합니다.
 
 ## 경력
 
@@ -111,7 +111,7 @@ write 작업에서 prompt injection·Slack 계정 탈취로 민감 도구가 악
 - 정보처리기사 (2019)
 - OSSCA — TypeScript Handbook 한글화 (2020), githru-vscode-ext (2023)
 - SmileGate Membership AI 1기 (2021)
-- AUSG 1기 (2019)
+- AUSG (AWSKRUG University Student Group) 1기 (2019)
 
 ### 어학
 - 영어 — 기초 비즈니스
