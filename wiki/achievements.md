@@ -81,7 +81,25 @@ prompt injection·Slack 계정 탈취로 민감 도구가 악용될 수 있는 �
 
 ---
 
-## E. ThanoSQL — AI 데이터 분석 플랫폼 (스마트마인드)
+## E. ui-kit-front — 공유 UI Kit · 디자인 시스템
+
+**Evidence:** Redacted-internal (1 PR merged to main/develop; additional branch-only commits per engineer-provided data)
+**Note:** 아래 Figma Code Connect / 아이콘 시스템 작업은 브랜치에만 존재하며 main에 병합되지 않았음.
+
+### main/develop에 병합된 작업 (v0.1.8)
+330개 파일 규모로 컴포넌트·아이콘·에셋을 동기화하고 v0.1.8 릴리즈를 작성·머지했다. Snyk의 tailwind-merge 3.3.1→3.4.0 보안 업그레이드 커밋을 처리했다.
+
+### 브랜치 전용 작업 (unmerged · 참고 기록)
+- **Figma Code Connect 통합 (FT-112):** 컴포넌트별 Code Connect 연결, Input·Toggle 등 Storybook 설정 개선, Figma Template V2 API 기반 템플릿 파일 추가, Figma 플러그인 아키텍처 모듈화
+- **아이콘 시스템 설계:** size prop 정규화·토큰 처리, width/height props 및 tight icon 스마트 기본값, filled/colored icon variant 추가
+- **컴포넌트 개선:** Toggle 접근성 및 line toggle 구현, Button ghost variant padding, Slider 수직 존·hover 동기화, Tabbar 컴포넌트·지갑 아이콘 추가
+
+### 활용 지침
+디자인 시스템·컴포넌트 라이브러리 포지션에서 Figma Code Connect 연동 경험 보조 근거로 활용 가능. 일반 프론트엔드 지원에서는 메인 업적으로 사용하지 않음.
+
+---
+
+## F. ThanoSQL — AI 데이터 분석 플랫폼 (스마트마인드)
 
 **Evidence:** Public (velog.io/@ss-won) + Redacted-internal
 
