@@ -19,6 +19,7 @@ Pockie 모바일 지갑/WebView 거래 제품, BTCFi 예치 상품, Bifrost Expl
 - JPYC 스테이블코인의 예치·인출·수익 청구를 지원하는 BTCFi 파트너 제품에서 정책·수명주기가 다른 파트너 플로우를 하나의 제품 코어 위에서 운영하도록 구현하고, 비동기 입금·복구·epoch 출금·진행 대시보드를 초기 구축부터 릴리스까지 담당
 - Blockscout 기반 Bifrost Explorer를 유지보수하며 브릿지 필터, Next.js App Router 전환, blocks·transactions·tokens 목록 화면 성능 개선, 테스트넷·메인넷별 Docker image 재사용을 위한 런타임 환경변수 주입 구조 전환을 담당
 - 사내 Slack 기반 AI Agent(금쪽이)의 코드 리뷰 workflow를 구성하고, 리뷰 근거·confidence verifier·Jira 티켓 검증·CI/테스트/타입/high severity 품질 게이트를 연결해 AI 리뷰 결과의 신뢰도와 운영 안전성을 개선
+- UI Kit (디자인 시스템)에서 합성 컴포넌트(Tabs·Toast 등)의 동적 children 구조를 정적 매핑으로 표현할 수 없어 Figma Template V2 API를 도입 — 런타임에 인스턴스를 순회하고 연결된 자식 컴포넌트 템플릿을 재귀 실행해 실제 Figma 구성 기반 코드를 생성하는 파이프라인을 구현하고 Code Connect CLI와 연동
 
 ### 스마트마인드(ThanoSQL) · Full-stack Engineer → Frontend Developer → Frontend Part Leader
 2021.07 – 2024.09

@@ -94,8 +94,11 @@ prompt injection·Slack 계정 탈취로 민감 도구가 악용될 수 있는 �
 - **아이콘 시스템 설계:** size prop 정규화·토큰 처리, width/height props 및 tight icon 스마트 기본값, filled/colored icon variant 추가
 - **컴포넌트 개선:** Toggle 접근성 및 line toggle 구현, Button ghost variant padding, Slider 수직 존·hover 동기화, Tabbar 컴포넌트·지갑 아이콘 추가
 
+### 파이프라인 구현
+합성 컴포넌트(Tabs·Toast 등)는 정적 `figma.connect()` 매핑으로 동적 children 수·내용을 표현할 수 없어 Template V2 API를 도입. `findLayers()`·`findText()`로 런타임 인스턴스 순회, `findConnectedInstances()` + `executeTemplate()`로 자식 컴포넌트 템플릿을 재귀 실행해 실제 Figma 구성 기반 코드를 생성. `figma.template.config.json` + 커스텀 `parser.js`로 Code Connect CLI와 연동. 20개 컴포넌트 중 14개에 동적 API 적용 (정적 getEnum 전용 6개 제외).
+
 ### 활용 지침
-디자인 시스템·컴포넌트 라이브러리 포지션에서 Figma Code Connect 연동 경험 보조 근거로 활용 가능. 일반 프론트엔드 지원에서는 메인 업적으로 사용하지 않음.
+디자인 시스템·컴포넌트 라이브러리·FDE 포지션에서 "합성 컴포넌트 Code Connect 한계 → Template V2로 해결" 스토리로 활용. 일반 프론트엔드 지원에서는 메인 업적으로 사용하지 않음.
 
 ---
 
