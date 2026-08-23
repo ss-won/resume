@@ -8,7 +8,7 @@ React·TypeScript 기반 프론트엔드 개발자입니다. 크립토 자산 �
 ## 경력
 
 ### 파이랩테크놀로지(Bifrost Platform) · Frontend Developer
-2024.09 – 현재
+2024.09 – 현재 (1년 11개월)
 
 Pockie 모바일 지갑/WebView 거래 제품, BTCFi 예치 상품, Bifrost Explorer의 제품 개발·운영 개선을 담당하고, 사내 Slack 기반 AI Agent(금쪽이)의 코드 리뷰 자동화 workflow를 개선했습니다. 주요 업무는 거래 화면 구현, 데이터 조회 구조 개선, 성능 최적화, 테스트 자동화, 품질 게이트 구성입니다.
 
@@ -22,7 +22,7 @@ Pockie 모바일 지갑/WebView 거래 제품, BTCFi 예치 상품, Bifrost Expl
 - UI Kit (디자인 시스템)에서 합성 컴포넌트(Tabs·Toast 등)의 동적 children 구조를 정적 매핑으로 표현할 수 없어 Figma Template V2 API를 도입 — 런타임에 인스턴스를 순회하고 연결된 자식 컴포넌트 템플릿을 재귀 실행해 실제 Figma 구성 기반 코드를 생성하는 파이프라인을 구현하고 Code Connect CLI와 연동해 Figma MCP 코드 생성 컨텍스트를 정형화
 
 ### 스마트마인드(ThanoSQL) · Full-stack Engineer → Frontend Developer → Frontend Part Leader
-2021.07 – 2024.09
+2021.07 – 2024.09 (3년 2개월)
 
 고객 온프레미스 환경에서 ThanoSQL 분석 기능을 웹으로 사용할 수 있도록 JupyterLab Workspace, SQL Editor, Query Viewer를 개발했습니다. 프론트엔드 파트 리더로서 앱·공통 컴포넌트 중심의 pnpm/Turborepo 모노레포 구조를 구성했습니다.
 
