@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정소원 — 프로젝트 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1a1a1a;
+    --ink2: #3d3d3d;
+    --ink3: #767676;
+    --ink4: #aeaeae;
+    --rule: #e2e2e2;
+    --accent: #1d4ed8;
+    --bg: #ffffff;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 72px 40px 80px;
+  }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 52px;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 16px;
+  }
+
+  .name { font-family: var(--sans); font-size: 42px; font-weight: 700; letter-spacing: -1.5px; line-height: 1; }
+  .name-en { font-size: 14px; font-weight: 400; color: var(--ink3); letter-spacing: 0.5px; margin-top: 6px; }
+  .doc-type { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-top: 10px; }
+
+  .header-contacts { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .contact-row { display: flex; gap: 20px; }
+  .contact-item { font-size: 12.5px; color: var(--ink3); text-decoration: none; }
+  .contact-item:hover { color: var(--accent); }
+
+  /* ── Nav ── */
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .toc-item {
+    font-size: 12px;
+    color: var(--ink3);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    transition: all 0.15s;
+  }
+
+  .toc-item:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ── Project Block ── */
+  .project {
+    border-top: 1px solid var(--rule);
+    padding-top: 36px;
+    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0 32px;
+  }
+
+  .proj-left {}
+
+  .proj-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink4);
+    margin-bottom: 8px;
+  }
+
+  .proj-company {
+    font-size: 12px;
+    color: var(--ink3);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .proj-period {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink4);
+    margin-top: 4px;
+  }
+
+  .proj-stack {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .proj-stack-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 4px;
+  }
+
+  .stack-tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink3);
+    border: 1px solid var(--rule);
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: #fafafa;
+    display: inline-block;
+    margin: 2px 2px 0 0;
+  }
+
+  .proj-right {}
+
+  .proj-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .proj-sub {
+    font-size: 12.5px;
+    color: var(--ink4);
+    font-family: var(--mono);
+    margin-bottom: 14px;
+  }
+
+  .proj-intro {
+    font-size: 14.5px;
+    color: var(--ink2);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  /* ── Sub section ── */
+  .sub {
+    margin-bottom: 20px;
+  }
+
+  .sub-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .sub-body {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.8;
+  }
+
+  .bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bullets li {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.75;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .bullets li::before {
+    content: '•';
+    position: absolute;
+    left: 2px;
+    color: var(--ink3);
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  /* ── Debug case ── */
+  .debug-case {
+    background: #f7f8fc;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+
+  .debug-case-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .debug-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 4px 12px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    margin-bottom: 2px;
+  }
+
+  .debug-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink4);
+    padding-top: 3px;
+    font-weight: 500;
+  }
+
+  .debug-text { color: var(--ink2); }
+
+  /* ── Result block ── */
+  .result-block {
+    background: #f7f8fc;
+    border-left: 2px solid var(--accent);
+    padding: 12px 16px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .result-block p {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.7;
+  }
+
+  /* ── Sub result line ── */
+  .sub-result {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.7;
+    margin-top: 8px;
+    padding-left: 2px;
+  }
+
+  /* ── Perf Table ── */
+  .perf-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13.5px;
+  }
+
+  .perf-table th {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--ink4);
+    text-align: left;
+    padding: 6px 12px 6px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .perf-table td {
+    padding: 7px 12px 7px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--ink2);
+    vertical-align: middle;
+  }
+
+  .perf-table td:first-child {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink3);
+  }
+
+  .perf-before { font-family: var(--mono); color: var(--ink4); text-decoration: line-through; margin-right: 6px; }
+  .perf-after { font-family: var(--mono); font-weight: 500; color: var(--ink); }
+  .perf-delta { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+
+  .highlight {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ── Arch diagram ── */
+  .arch-box {
+    background: #f7f8fc;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    font-size: 13.5px;
+  }
+
+  .arch-row {
+    display: block;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .arch-row:last-child { margin-bottom: 0; }
+
+  .arch-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .arch-desc { color: var(--ink3); font-size: 13.5px; }
+
+  @media print {
+    .page { padding: 16px 26px; }
+    body { font-size: 11.5px; line-height: 1.5; }
+
+    .header { margin-bottom: 20px; }
+    .name { font-size: 32px; }
+    .header-top { padding-bottom: 12px; margin-bottom: 10px; }
+
+    .project { padding-top: 18px; margin-bottom: 24px; grid-template-columns: 130px 1fr; gap: 0 20px; }
+    .proj-num { font-size: 10px; }
+    .proj-title { font-size: 15px; margin-bottom: 4px; }
+    .proj-sub { font-size: 11px; margin-bottom: 6px; }
+    .proj-intro { font-size: 11.5px; margin-bottom: 8px; line-height: 1.6; }
+    .proj-stack { margin-bottom: 8px; gap: 3px; }
+    .stack-tag { font-size: 10px; padding: 1px 5px; }
+
+    .sub { margin-bottom: 8px; }
+    .sub-title { font-size: 11px; margin-bottom: 4px; }
+    .sub-body { font-size: 11.5px; line-height: 1.6; }
+    .bullets li { font-size: 11.5px; line-height: 1.6; }
+
+    .arch-box { padding: 8px 12px; margin-bottom: 8px; font-size: 11.5px; }
+    .arch-row { margin-bottom: 5px; line-height: 1.6; }
+    .arch-label { font-size: 11px; }
+    .arch-desc { font-size: 11.5px; }
+
+    .debug-case { padding: 7px 10px; margin-bottom: 5px; }
+    .debug-case-title { font-size: 11px; }
+    .debug-row { font-size: 11px; gap: 6px; }
+
+    .perf-table { font-size: 11px; }
+    .perf-table th, .perf-table td { padding: 4px 8px 4px 0; }
+
+    .result-block { padding: 7px 11px; margin-top: 7px; gap: 3px; }
+    .result-block p { font-size: 11px; line-height: 1.6; }
+    .sub-result { font-size: 11px; margin-top: 5px; }
+
+    .project { break-inside: avoid; }
+    .sub { break-inside: avoid; }
+    .debug-case { break-inside: avoid; }
+    .arch-box { break-inside: avoid; }
+    .perf-table { break-inside: avoid; }
+    .result-block { break-inside: avoid; }
+    .proj-title { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div>
+        <div class="name">정소원</div>
+        <div class="name-en">Sowon Jung</div>
+        <div class="doc-type">Project Portfolio</div>
+      </div>
+      <div class="header-contacts">
+        <div class="contact-row">
+          <span class="contact-item">010-9349-1709</span>
+          <a class="contact-item" href="mailto:swj960515@gmail.com">swj960515@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <a class="contact-item" href="https://github.com/ss-won" target="_blank">github.com/ss-won</a>
+          <a class="contact-item" href="https://velog.io/@ss-won" target="_blank">velog.io/@ss-won</a>
+          <a class="contact-item" href="https://www.linkedin.com/in/sowon-jung-573867193/" target="_blank">linkedin.com/in/sowon-jung-573867193</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- 01 -->
+  <div class="project" id="p01">
+    <div class="proj-left">
+      <div class="proj-num">01 /</div>
+      <div class="proj-company">파이랩테크놀로지</div>
+      <div class="proj-period">2024.09 — 현재</div>
+      <div class="proj-stack">
+        <div class="proj-stack-label">Stack</div>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">TailwindCSS</span>
+        <span class="stack-tag">TanStack Query</span>
+        <span class="stack-tag">wagmi · viem</span>
+        <span class="stack-tag">Sentry</span>
+      </div>
+    </div>
+    <div class="proj-right">
+      <div class="proj-title">프론트엔드 성능 병목 개선</div>
+      <div class="proj-sub">Gas Top-up · BiFi WebView · Bifrost Explorer</div>
+      <p class="proj-intro">Gas Top-up DApp(Pockie 지갑 가스 충전)·BiFi WebView(DeFi 렌딩)·Bifrost Explorer(Bifrost Network 블록 탐색기)에서 발생한 성능 병목을 서비스별 원인에 맞춰 각각 개선했습니다.</p>
+
+      <div class="sub">
+        <div class="sub-title">Gas Top-up — 호출 구조 단순화</div>
+        <ul class="bullets">
+          <li>보유 자산 수에 비례하던 자산·잔액 조회를 <strong>지원 토큰 기준 조회</strong>로 정리</li>
+          <li>사내 SDK가 wallet 연결 시 asset 정보를 최상위 provider에 저장하는 구조를 파악하고, 하위 앱 단위에서 <strong>중복 설정된 asset 조회를 제거</strong>해 진입 시 호출 단순화</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">BiFi WebView — bridge pair 조회 개선</div>
+        <ul class="bullets">
+          <li>토큰·네트워크 선택마다 반복 조회하던 구조(<span class="highlight">1+N</span>회)를 outbound/inbound <span class="highlight">2회</span> 캐시 조회로 전환</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">Bifrost Explorer — 목록 렌더링 최적화</div>
+        <ul class="bullets">
+          <li>가상화 도입을 검토했으나 행 간 whitespace 이슈로 단계적 렌더링으로 전환 — 초기 렌더링 범위 제한·WebSocket <span class="highlight">30초 배치 처리</span> 적용</li>
+        </ul>
+        <table class="perf-table">
+          <thead>
+            <tr>
+              <th>Route</th><th>LCP (before → after)</th><th>TBT (before → after)</th><th>개선</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>/blocks</td>
+              <td><span class="perf-before">3.7s</span><span class="perf-after">1.9s</span></td>
+              <td><span class="perf-before">1,010ms</span><span class="perf-after">270ms</span></td>
+              <td><span class="perf-delta">LCP ↓49% · TBT ↓73%</span></td>
+            </tr>
+            <tr>
+              <td>/txs</td>
+              <td><span class="perf-before">3.7s</span><span class="perf-after">2.2s</span></td>
+              <td><span class="perf-before">1,330ms</span><span class="perf-after">200ms</span></td>
+              <td><span class="perf-delta">LCP ↓41% · TBT ↓85%</span></td>
+            </tr>
+            <tr>
+              <td>/tokens</td>
+              <td><span class="perf-before">3.3s</span><span class="perf-after">1.8s</span></td>
+              <td><span class="perf-before">510ms</span><span class="perf-after">190ms</span></td>
+              <td><span class="perf-delta">LCP ↓45% · TBT ↓63%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="project" id="p02">
+    <div class="proj-left">
+      <div class="proj-num">02 /</div>
+      <div class="proj-company">파이랩테크놀로지</div>
+      <div class="proj-period">2024.09 — 현재</div>
+      <div class="proj-stack">
+        <div class="proj-stack-label">Stack</div>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">TailwindCSS</span>
+        <span class="stack-tag">wagmi · viem</span>
+        <span class="stack-tag">NestJS</span>
+        <span class="stack-tag">TanStack Query</span>
+        <span class="stack-tag">Jotai</span>
+      </div>
+    </div>
+    <div class="proj-right">
+      <div class="proj-title">모바일 WebView 거래 제품 구현</div>
+      <div class="proj-sub">Pockie miniDApp · BTCFi Partners</div>
+      <p class="proj-intro">각기 다른 호스트 환경과 파트너사에서 동일한 거래 화면을 노출·재사용하기 위해 서비스별로 BFF 계약과 연동 구조를 설계했습니다.</p>
+
+      <div class="sub">
+        <div class="sub-title">Pockie miniDApp — BiFi · Token Swap · BTCFi 거래 화면</div>
+        <ul class="bullets">
+          <li>Pockie(크립토 자산 지갑 앱) WebView — <strong>BFF 계약</strong>을 기준으로 자산·거래 데이터를 처리하고 지갑 서명·전송은 호스트 지갑에 위임, Mobile App·Chrome Extension 두 환경에서 동일한 WebView 화면 재사용</li>
+          <li>BiFi·Token Swap·BTCFi 서비스 3가지의 주요 거래 calldata 조회·vault 조회·상태 조회를 Pockie BFF API와 연결</li>
+          <li>iOS·Android·Extension 및 앱 버전별 <strong>feature flag</strong>와 하위 호환 fallback을 <strong>BFF config v2</strong>에 구현 — 클라이언트 배포 없이 기능 노출 서버 제어</li>
+        </ul>
+        <p class="sub-result">→ Mobile App·Chrome Extension 두 호스트에서 <strong>BiFi·Swap·BTCFi 동일 화면 재사용</strong> 구조 구현</p>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">BTCFi Partners — Hashport Wallet WebView 연동</div>
+        <ul class="bullets">
+          <li>Bitcoin 담보 JPYC 스테이블코인 예치 상품 — 파트너사(Hashport Wallet) iOS·Android WebView에서 BTCFi Partners DApp 노출</li>
+          <li><strong>postMessage</strong> 이벤트를 협의·설계하고 <strong>widget route</strong>로 WebView 접근과 일반 웹 접근을 분리해 상품 로직 재사용</li>
+        </ul>
+        <p class="sub-result">→ 출시 3개월간 일본 액티브 유저 <span class="highlight">750명대</span>, 실제 입금 <span class="highlight">1억 엔대</span> 운영 중</p>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">BTCFi BFF 구조 개선</div>
+        <ul class="bullets">
+          <li>클라이언트가 다수의 RPC·사내 API로 직접 분기 호출하던 구조 — 응답 순서에 따라 수치가 달라지는 <strong>race condition</strong> 발생, 캐싱·에러 핸들링 책임 경계도 불명확</li>
+          <li>BFF에서 BiFi·Everdex status(예치·수익)와 BTCFi 온체인 자산(담보·LTV·청산가격)을 각각 집계해 <strong>분리된 엔드포인트</strong>로 재설계 — <strong>race condition 제거</strong> 및 자산 수치 일관성 확보</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="project" id="p03">
+    <div class="proj-left">
+      <div class="proj-num">03 /</div>
+      <div class="proj-company">파이랩테크놀로지</div>
+      <div class="proj-period">2024.09 — 현재</div>
+      <div class="proj-stack">
+        <div class="proj-stack-label">Stack</div>
+        <span class="stack-tag">Claude Agent SDK</span>
+        <span class="stack-tag">Codex app server</span>
+        <span class="stack-tag">MCP</span>
+        <span class="stack-tag">Slack</span>
+      </div>
+    </div>
+    <div class="proj-right">
+      <div class="proj-title">AI Agent 운영 및 AI 도구 활용</div>
+      <div class="proj-sub">금쪽이 · 디자인 시스템 파이프라인</div>
+      <p class="proj-intro">사내 AI Agent(금쪽이)의 런타임 구조 개선과 디자인 시스템 자동화 파이프라인 구현 두 가지로 구성됩니다.</p>
+
+      <div class="sub">
+        <div class="sub-title">금쪽이 — 컨텍스트 주입 구조 개선</div>
+        <ul class="bullets">
+          <li>메모리·프롬프트 주입 구조를 <strong>core memory</strong>와 <strong>MCP on-demand search</strong>로 분리하고, 변동 정보는 프롬프트 tail로 분리해 <strong>캐시 적중률</strong>에 영향을 주는 정적 prefix 안정화</li>
+          <li>메모리 주입 예산·우선순위 절단·관측 로그를 추가해 요청별 <strong>컨텍스트 주입량을 통제 가능한 구조</strong>로 정리</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">금쪽이 — 자동 리뷰 workflow와 품질 게이트</div>
+        <ul class="bullets">
+          <li>Slack 기반 코드 리뷰 흐름에 리뷰 근거·<strong>confidence verifier</strong>(임계값 0.8, 별도 LLM 호출로 품질 검증) 추가</li>
+          <li>CI 상태를 <span class="highlight">30초</span> 간격으로 polling해 CI 통과·테스트·타입·severity 기준을 모두 만족한 경우 <strong>자동으로 리뷰를 제출</strong></li>
+          <li>사람이 최종 확인하는 운영 원칙에 따라 <strong>자동 머지는 구현하지 않음</strong></li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">금쪽이 — MCP 도구 실행 구조 개선</div>
+        <ul class="bullets">
+          <li>기존: 새 request마다 등록된 MCP 서버 전체를 stdio로 spawn → 동시 요청 시 프로세스 메모리 경합·응답 저하</li>
+          <li><strong>lazy-proxy</strong> 도입 — request 시작 시 연결 관리자만 준비, 특정 tool이 처음 호출될 때만 해당 서버를 spawn, request 종료 시 전체 정리</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">금쪽이 — Codex app server 전환과 보안 gate</div>
+        <ul class="bullets">
+          <li>Claude Agent SDK 런타임을 <strong>Codex app server</strong> 기반으로 전환 — read/write tool 권한 구조 통합, dynamic tools 지원에 맞춰 도구를 자체 검색·활성화하는 구조로 재설계</li>
+          <li>tool 실행 경로에 <strong>3단계 보안 레이어</strong>(활성화 검사 → bash 명령 안전성 검증 → write 작업 승인 정책) 구성, 외부 코드 실행과 환경 오염 가능 작업은 <strong>workspace sandbox</strong>로 격리</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">디자인 시스템 코드 생성 컨텍스트 정형화</div>
+        <ul class="bullets">
+          <li>디자인 시스템 컴포넌트 재사용 코드를 Figma MCP 컨텍스트로 정형화하기 위해 <strong>Code Connect CLI</strong> 도입 — 모델이 컴포넌트를 구현·재사용할 때 정확한 코드 스펙을 참조하도록 컨텍스트 주입</li>
+          <li>합성 컴포넌트(Tabs·Toast 등)는 동적 children 구조로 정적 매핑 불가 → <strong>Figma Template V2 API</strong>로 런타임에 인스턴스를 순회·재귀 실행해 실제 Figma 구성 기반 코드 생성</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="project" id="p04">
+    <div class="proj-left">
+      <div class="proj-num">04 /</div>
+      <div class="proj-company">스마트마인드</div>
+      <div class="proj-period">2021 — 2024</div>
+      <div class="proj-stack">
+        <div class="proj-stack-label">Stack</div>
+        <span class="stack-tag">React 18</span>
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">Vite</span>
+        <span class="stack-tag">pnpm · Turborepo</span>
+        <span class="stack-tag">Monaco Editor</span>
+        <span class="stack-tag">ANTLR</span>
+        <span class="stack-tag">React-Query · SWR</span>
+        <span class="stack-tag">Recoil · Zustand</span>
+        <span class="stack-tag">emotion · MUI</span>
+        <span class="stack-tag">Playwright</span>
+      </div>
+    </div>
+    <div class="proj-right">
+      <div class="proj-title">ThanoSQL — 랜딩/콘솔 · Workspace</div>
+      <p class="proj-intro">ThanoSQL은 정형·비정형 데이터 모두 SQL 쿼리를 사용해 AI 모델링 및 검색을 가능하게 한 통합 플랫폼. 랜딩/콘솔 페이지는 서비스 개요와 제품 진입 경로를 제공하며, Workspace는 JupyterLab 기반 노트북 환경(Lab)과 SQL 쿼리 편집기(Query Manager)를 제공하는 Data Lakehouse 서비스.</p>
+
+      <div class="sub">
+        <div class="sub-title">랜딩/콘솔 — 기여 내용</div>
+        <ul class="bullets">
+          <li>검색 엔진 크롤러가 콘텐츠를 인덱싱할 수 있도록 <strong>Next.js SSR</strong> 도입</li>
+          <li>별도 서버에 각각 배포된 ThanoSQL 기반 데모 프로젝트들을 iframe으로 통합해 Playground 단일 페이지에서 제공하도록 개발</li>
+          <li>메인 도메인의 쿠키에 사용자의 로그인 토큰을 저장·접근·삭제하기 위한 <strong>Next.js API 개발, Google OAuth 로그인</strong> 적용</li>
+          <li><strong>Playwright e2e-test 도입</strong>: Navigation check, Input form validation UI 테스트 코드 작성, Vercel Preview deployment에 대해 자동 검사하도록 <strong>GitHub Actions</strong> 설정</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">Workspace — Microfrontend 아키텍처</div>
+        <div class="arch-box">
+          <div class="arch-row">
+            <span class="arch-label">pnpm Workspace + Turborepo — 5 App 분리</span>
+            <span class="arch-desc">File Manager · Query Manager · Lab · API · Main으로 App 단위 분리. 관심사 분리 및 Vercel 개별 배포.</span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">Main(shell) → Lab — iframe embed</span>
+            <span class="arch-desc">Main 앱이 온프레미스 JupyterLab 서버를 iframe으로 embed. postMessage로 인증 처리 완료 후 iframe 콘텐츠를 로드.</span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">Query Manager · File Manager — module federation</span>
+            <span class="arch-desc">@originjs/vite-plugin-federation으로 런타임 모듈 공유. 빌드 없이 원격 모듈 로드.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">Workspace — 빌드·번들 최적화</div>
+        <ul class="bullets">
+          <li>Workspace 패키지 매니저 변경(yarn → pnpm)과 turbo cache 설정으로 각 앱별 평균 빌드 시간 최대 <span class="highlight">7분 → 1분</span> 단축</li>
+          <li>vite rollup manualChunk, tree-shaking, dynamic import, React Suspense로 First Load <span class="highlight">최대 40% 감소</span></li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">Workspace — 공통 인프라</div>
+        <ul class="bullets">
+          <li>monaco-editor base로 사내 자체 개발된 SQL용 Query Editor 컴포넌트 개발</li>
+          <li>Monorepo 공용 패키지 개발 — 공용 eslint, tsconfig, svgr-cli를 통한 아이콘 컴포넌트화, @types/ 패키지화</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="project" id="p05">
+    <div class="proj-left">
+      <div class="proj-num">05 /</div>
+      <div class="proj-company">스마트마인드</div>
+      <div class="proj-period">2022 · PoC</div>
+      <div class="proj-stack">
+        <div class="proj-stack-label">Stack</div>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">pandas</span>
+        <span class="stack-tag">numpy</span>
+        <span class="stack-tag">Facebook Ads API</span>
+        <span class="stack-tag">Google Ads API</span>
+      </div>
+    </div>
+    <div class="proj-right">
+      <div class="proj-title">M.AD.E PoC</div>
+      <div class="proj-sub">광고 데이터 파싱·전처리 파이프라인</div>
+      <p class="proj-intro">광고주와 프리랜서 마케터를 중개하고, 마케터들이 집행한 Google·Facebook 광고의 주요 성과 지표(CTR, CPC, CPM, Conversion rate)를 라이브 레포트로 제공하는 서비스.</p>
+      <div class="sub">
+        <div class="sub-title">기여 내용</div>
+        <ul class="bullets">
+          <li>연동된 마케터 계정의 광고 리포트 데이터를 파싱하여(Facebook Graph Ads API, Google Ads API) 자사 데이터 모델링 내용에 맞게 전처리하는 파이프라인 개발</li>
+          <li>메인 랜딩 웹페이지 개발</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="project" id="p06">
+    <div class="proj-left">
+      <div class="proj-num">06 /</div>
+      <div class="proj-company">스마트마인드</div>
+      <div class="proj-period">2021 — 2022 · 데이터 바우처</div>
+      <div class="proj-stack">
+        <div class="proj-stack-label">Stack</div>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">Material-UI</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">mssql</span>
+        <span class="stack-tag">Docker</span>
+      </div>
+    </div>
+    <div class="proj-right">
+      <div class="proj-title">데이터 바우처 과제 — Steco SaaS · P2P-DC</div>
+      <div class="proj-sub">드론 고장 분석 · 발전 예측량 · 잉여 전력 예측·실측 API</div>
+      <p class="proj-intro">두 건의 데이터 바우처 과제로, Steco는 YOLOv5 열화상 분석 기반 드론 고장 분석과 발전 예측량(daily, long-term) 레포트 웹 서비스이고, P2P-DC는 잉여 전력 p2p 블록체인 거래 앱에 연결되는 잉여 전력 실제값·예측값 제공 API.</p>
+
+      <div class="sub">
+        <div class="sub-title">Steco SaaS — 기여 내용</div>
+        <ul class="bullets">
+          <li>JavaScript, React, Material-UI로 컴포넌트 구현·스타일 관리, Context API로 전역 상태 관리</li>
+          <li>FastAPI·mssql로 API 구현, AI 팀 파인튜닝 PyTorch .pt 모델 파일 서빙 인프라 구성</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <div class="sub-title">P2P-DC — 기여 내용</div>
+        <ul class="bullets">
+          <li>외부 데이터 API에서 매일 cron으로 실측 데이터를 수집하고, AI 팀 예측 알고리즘을 실행해 실측·예측 데이터 파일을 저장하는 파이프라인 구성</li>
+          <li>cron 실패 시 UI에서 직접 데이터 갱신을 트리거할 수 있는 수동 업데이트 API 개발 — 파이프라인 장애 시 운영 연속성 확보</li>
+          <li>해당 데이터를 차트용으로 제공하는 조회 API 개발, Docker 기반 배포 환경 구축</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
