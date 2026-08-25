@@ -53,7 +53,7 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 | /blocks LCP 3.7s→1.9s (↓49%), TBT 1,010ms→270ms (↓73%) | Redacted-internal + caveat | 로컬 Lighthouse 측정 — 프로덕션 RUM 아님 |
 | /txs LCP 3.7s→2.2s (↓41%), TBT 1,330ms→200ms (↓85%) | Redacted-internal + caveat | 로컬 Lighthouse 측정 |
 | /tokens LCP 3.3s→1.8s (↓45%), TBT 510ms→190ms (↓63%) | Redacted-internal + caveat | 로컬 Lighthouse 측정 |
-| 테스트넷·메인넷 Docker image 런타임 환경변수 주입 구조 전환 | Redacted-internal | explorer-front PR 근거 |
+| 빌드타임 환경변수 의존을 런타임 주입으로 전환(ISR→SSR) — 테스트넷·메인넷이 동일 빌드 산출물 공유 | Redacted-internal | explorer-front PR 근거 · 애플리케이션 레이어 기여이며 컨테이너·파이프라인 구성은 인프라팀 담당 |
 
 ### AI Agent 런타임
 

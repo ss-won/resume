@@ -55,6 +55,14 @@
       "interview_defensible": true
     },
     {
+      "id": "exp-pilab-explorer-runtime-env",
+      "text": "빌드타임 환경변수 의존을 런타임 주입으로 전환(ISR→SSR) — 테스트넷·메인넷이 동일 빌드 산출물 공유",
+      "evidence": "redacted-internal",
+      "repo": "explorer-front",
+      "interview_defensible": true,
+      "scope_note": "애플리케이션 레이어 기여. 컨테이너 이미지·배포 파이프라인 구성은 인프라팀 담당."
+    },
+    {
       "id": "exp-pilab-ai-agent",
       "text": "사내 Slack 기반 AI Agent의 코드 리뷰 workflow, confidence verifier, Jira 검증, 품질 게이트 구성",
       "evidence": "redacted-internal",
