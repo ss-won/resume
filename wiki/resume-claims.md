@@ -46,7 +46,7 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 | Pockie miniDApp의 BiFi·Swap·BTCFi 화면 개발 및 postMessage 지갑 기능 연동 | Redacted-internal | pockie-ui 제품/기여 기록. 공통 아키텍처 전체를 신규·단독 설계했다고 주장하지 않음 |
 | Pockie BFF config v2에서 플랫폼·앱 버전별 feature flag로 기능 노출을 제어 | Redacted-internal | pockie-api-v2 PR 근거 |
 | BTCFi Partners의 파트너별 거래 흐름 분리, UI·데이터 계층 공유 및 의존 경계 CI 테스트 | Redacted-internal | btcfi-partners-front #132 원본 PR 본문 확인. 파트너별 flows 물리 분리이며 모든 상품 흐름 공통화가 아님 |
-| 웹앱 외에 파트너 지갑 WebView용 widget 화면 제공 | Self-attested | 2026-09-14 본인 추가 확인. 특정 파트너 요청에 맞춘 제공 방식이며 모든 파트너·플랫폼 지원으로 확대하지 않음 |
+| 기존 모바일 페이지를 재사용하는 WebView용 widget 경로 분기 및 일부 컴포넌트 수정 | Self-attested | 2026-09-14 본인 정정. 페이지 경로를 분기하고 파트너 요구에 따라 달라지는 컴포넌트만 수정한 것이며 별도 화면 전체 신규 개발이 아님 |
 | NestJS Swap BFF 개발·견적/거래 데이터/상태 API 연동 | Redacted-internal | pockie-api-v2 #12·#16~19. 프론트에서 BFF로 이전했다는 전후 관계나 모든 엔드포인트 신규 작성은 주장하지 않음 |
 | 플랫폼·버전별 feature flag를 BFF config v2에 구현 | Redacted-internal | pockie-api-v2 PR 근거 |
 
