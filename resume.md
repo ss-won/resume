@@ -3,7 +3,7 @@ Software Engineer | Product Engineer | Frontend Developer · 010-9349-1709 · sw
 
 ## 프로필
 
-React·TypeScript 기반 프론트엔드 개발을 중심으로 WebView 제품, 데이터 분석 UI, BFF와 사내 AI Agent 런타임을 개발해왔습니다. 성능 문제는 측정 결과를 바탕으로 개선하고, 복잡한 요구사항은 데이터 흐름과 각 모듈의 역할을 먼저 정리합니다. 제품 개발에 필요할 때는 NestJS·FastAPI 등 백엔드 영역도 함께 다룹니다.
+React·TypeScript로 WebView 거래 화면과 데이터 분석 UI를 개발해왔습니다. 느린 화면은 측정하고, 여러 기능이 얽힌 코드는 함께 쓸 부분과 따로 바꿀 부분을 나눠 정리합니다. 화면 개발에 필요한 BFF와 모델 조회 API도 직접 만들었고, 최근에는 사내 AI Agent의 실행 환경과 권한·리뷰 자동화를 개선하고 있습니다.
 
 ## 경력
 
@@ -17,7 +17,7 @@ WebView 거래 제품과 BFF, 블록 스캐너 성능 개선, 사내 AI Agent �
 - 블록 스캐너 주요 목록에 단계적 렌더링과 WebSocket 배치를 적용해 로컬 Lighthouse 기준 LCP 평균 45%, TBT 평균 74% 단축
 - Explorer를 Next.js Pages Router에서 App Router로 전환하고 React·Chakra UI 마이그레이션과 SSR hydration 오류 수정
 - Pockie의 BiFi·Swap·BTCFi WebView 거래 화면과 NestJS 기반 Swap BFF 개발 — 견적·거래 데이터 생성·상태 조회 API 연동
-- BTCFi Partners의 파트너별 거래 흐름을 공통 모듈에서 분리하고, 공유 UI·데이터 계층의 경계를 테스트로 검증
+- BTCFi Partners에서 파트너마다 다른 거래 흐름은 분리하고 UI·데이터 처리는 공유하도록 정리, 의존 규칙을 테스트로 확인
 - 사내 AI Agent의 Claude SDK 실행 경로를 Codex App Server로 전환하고, 도구별 실행 권한과 자동 코드 리뷰 검증 흐름 개선
 
 ### 스마트마인드 · Frontend Developer → Frontend Part Leader
@@ -27,11 +27,11 @@ AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 �
 
 **사용 기술:** TypeScript, React, Next.js, Vite, Monaco Editor, ANTLR, pnpm, Turborepo, Playwright, FastAPI, Docker Compose
 
-- pnpm·Turborepo 모노레포와 빌드 캐시를 도입해 당시 측정 기준 앱별 빌드 시간을 7분 → 1분으로 단축
+- 늘어나는 앱을 한 저장소에서 관리하도록 pnpm·Turborepo로 묶고 빌드 캐시를 적용해, 당시 측정 기준 앱별 빌드를 7분 → 1분으로 단축
 - 번들 분리·dynamic import로 Workspace 초기 로드 범위를 줄여 당시 측정 기준 First Load 최대 40% 단축
 - AI 팀이 정의한 ANTLR 문법을 Monaco Editor에 연결해 SQL 구문 강조·오류 진단·키워드 자동완성 구현
-- Microfrontend 설계·구현 — iframe+postMessage(Lab·Main 간 통신), module federation(Query Manager·File Manager)
-- 비정형 데이터 Query Viewer 성능 개선 — 서버 페이지네이션·가상 스크롤·미디어 lazy loading으로 대용량 결과 렌더링 안정화
+- Workspace에 여러 앱을 연결하기 위해 Lab·Main은 iframe·postMessage로 연동하고 Query Manager·File Manager는 module federation으로 구성
+- 대용량 쿼리 결과를 한꺼번에 그리지 않도록 서버 페이지네이션·가상 스크롤을 적용하고 이미지·영상은 필요한 시점에 로딩
 - FastAPI·Docker Compose로 AI 예측 모델 서빙 환경과 데이터 수집·전처리 파이프라인 개발
 - 2023년부터 본인 포함 2~3명 프론트엔드 파트의 스크럼 운영·업무 배분·우선순위 결정 담당
 
@@ -47,22 +47,22 @@ AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 �
 | /txs | 3.7s → 2.2s | 1,330ms → 200ms | LCP ↓41% · TBT ↓85% |
 | /tokens | 3.3s → 1.8s | 510ms → 190ms | LCP ↓45% · TBT ↓63% |
 
-- 최대 75개 row를 노출하는 테이블에서 가상화 적용 시 레이아웃 공백 문제가 있어 롤백하고, 초기 row 수를 제한한 단계적 렌더링으로 전환
-- WebSocket 30초 배치 처리로 실시간 업데이트에 따른 반복 렌더링 축소
-- Jest를 Vitest로 전환하고 Playwright로 단계적 렌더링·레이아웃 시프트·WebSocket 갱신 회귀 테스트 추가
+- 최대 75행 테이블에 가상화를 적용했지만 화면에 공백이 생겨 되돌리고, 첫 화면의 행 수를 줄인 뒤 나머지를 단계적으로 렌더링
+- WebSocket 30초 배치 처리로 업데이트마다 화면을 다시 그리는 횟수를 줄임
+- Jest를 Vitest로 옮기고, 렌더링 변경 후 화면이 밀리거나 실시간 갱신이 누락되는지 Playwright 테스트로 확인
 
-### 02 / WebView 거래 제품·파트너별 코드 구조
+### 02 / WebView 거래 화면과 파트너별 기능 분리
 
-- **Pockie miniDApp** — 모바일 앱·Chrome Extension에서 사용하는 BiFi·Swap·BTCFi 거래 화면 개발 및 postMessage 기반 지갑 기능 연동
-- **Pockie miniDApp** — iOS·Android·Extension과 앱 버전별 feature flag를 BFF config v2에 구현해 클라이언트 재배포 없이 기능 노출 제어
-- **BTCFi Partners** — 파트너별 예치·출금·클레임 흐름은 별도 모듈로 분리하고 UI·데이터 계층은 공유하도록 정리, 모듈 간 의존 규칙을 CI 테스트에 추가
+- **Pockie miniDApp** — BiFi·Swap·BTCFi 거래 화면을 개발하고, 모바일 앱·Chrome Extension의 지갑 기능을 postMessage로 연결
+- **Pockie miniDApp** — 앱 재배포 없이 플랫폼·버전별로 기능을 켜고 끌 수 있도록 BFF config v2에 feature flag 구현
+- **BTCFi Partners** — 파트너마다 다른 예치·출금·클레임 흐름은 따로 두고 UI·데이터 처리는 공유하도록 변경, 공통 모듈이 파트너 코드에 의존하지 않는지 CI에서 검사
 
 ### 03 / 사내 AI Agent 런타임 개선
 
-- Claude SDK 실행 경로를 Codex App Server 세션·worker로 전환하고 요청별 상태·취소 처리 분리
-- 세션 시작 시 모든 MCP 서버를 실행하던 방식을 필요한 서버만 호출 시 실행하는 lazy proxy로 변경
-- 요청 전체의 읽기·쓰기 분류 대신 도구별 외부 영향·되돌릴 수 있는지를 기준으로 자동 실행·승인·차단을 판단하도록 권한 정책 재설계
-- 자동 코드 리뷰에 저장소별 규칙·confidence·CI 상태 검증을 적용하고, 최종 merge는 사람이 확인하도록 운영
+- Claude SDK에서 Codex App Server로 실행 환경을 옮기고, 한 요청의 취소·종료가 다른 요청에 영향을 주지 않도록 상태 분리
+- 쓰지 않는 MCP 서버까지 매번 시작하던 낭비를 줄이기 위해, 도구를 호출할 때 필요한 서버만 실행하는 lazy proxy 구현
+- 요청을 읽기·쓰기로만 나누던 권한 정책을 바꿔, 각 도구가 외부에 미치는 영향과 되돌릴 수 있는지를 보고 실행·승인·차단 결정
+- 자동 리뷰가 저장소별 규칙을 따르도록 하고 리뷰 근거·confidence·CI 결과를 확인한 뒤 승인하도록 구성, 최종 merge는 사람이 판단
 
 ### 04 / DApp 데이터 조회 구조 최적화
 
