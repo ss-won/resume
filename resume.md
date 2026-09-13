@@ -53,7 +53,7 @@ AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 �
 
 - **Pockie miniDApp** — BiFi·Swap·BTCFi 거래 화면을 개발하고, 모바일 앱·Chrome Extension의 지갑 기능을 postMessage로 연결
 - **Pockie miniDApp** — 앱 재배포 없이 플랫폼·버전별로 기능을 켜고 끌 수 있도록 BFF config v2에 feature flag 구현
-- **BTCFi Partners** — 상품 조건과 지갑 연동 방식이 달라 거래 흐름을 파트너별로 분리 — 파트너 수와 배포 일정을 고려해 모노레포 도입 대신 기존 저장소에서 경계를 나누고 CI로 의존 규칙 검사
+- **BTCFi Partners** — 상품 조건·지갑 연동 방식에 따라 파트너별 거래 흐름을 분리하고, 웹앱 외에 파트너 지갑의 WebView에서 사용할 widget 화면을 별도로 제공
 
 ### 03 / 사내 AI Agent 런타임 개선
 
