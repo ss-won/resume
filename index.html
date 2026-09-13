@@ -594,10 +594,9 @@
           <span class="stack-tag">Sentry</span>
         </div>
         <ul class="bullets">
-          <li>블록 스캐너 주요 목록에 단계적 렌더링과 WebSocket 배치를 적용해 로컬 Lighthouse 기준 LCP 평균 <span class="highlight">45%</span>, TBT 평균 <span class="highlight">74%</span> 단축</li>
-          <li>Explorer를 Next.js Pages Router에서 App Router로 전환하고 React·Chakra UI 마이그레이션과 SSR hydration 오류 수정</li>
+          <li>블록 스캐너의 초기 행을 단계적으로 렌더링하고 실시간 행 추가량·갱신 빈도를 제한해, 로컬 Lighthouse 기준 LCP 평균 <span class="highlight">45%</span>, TBT 평균 <span class="highlight">74%</span> 단축</li>
           <li>Pockie의 BiFi·Swap·BTCFi WebView 거래 화면과 NestJS 기반 Swap BFF 개발 — 견적·거래 데이터 생성·상태 조회 API 연동</li>
-          <li>BTCFi Partners에서 파트너마다 다른 거래 흐름은 분리하고 UI·데이터 처리는 공유하도록 정리, 의존 규칙을 테스트로 확인</li>
+          <li>BTCFi Partners에서 공통 모듈 변경이 다른 파트너 화면에 영향을 주는 문제를 다루기 위해, 파트너별 거래 흐름을 분리하고 CI에 의존 규칙 검사 추가</li>
           <li>사내 AI Agent의 Claude SDK 실행 경로를 Codex App Server로 전환하고, 도구별 실행 권한과 자동 코드 리뷰 검증 흐름 개선</li>
         </ul>
       </div>
@@ -677,7 +676,7 @@
         </table>
         <ul class="ach-points" style="margin-top:12px;">
           <li>최대 75행 테이블에 가상화를 적용했지만 화면에 공백이 생겨 되돌리고, 첫 화면의 행 수를 줄인 뒤 나머지를 단계적으로 렌더링</li>
-          <li>WebSocket <span class="highlight">30초 배치 처리</span>로 업데이트마다 화면을 다시 그리는 횟수를 줄임</li>
+          <li>실시간으로 무거운 행이 계속 추가되던 테이블의 자동 추가량을 제한하고, 신규·대기 거래 알림을 모아 갱신</li>
           <li>Jest를 Vitest로 옮기고, 렌더링 변경 후 화면이 밀리거나 실시간 갱신이 누락되는지 Playwright 테스트로 확인</li>
         </ul>
       </div>
@@ -690,7 +689,7 @@
         <ul class="ach-points">
           <li><strong>Pockie miniDApp</strong> — BiFi·Swap·BTCFi 거래 화면을 개발하고, 모바일 앱·Chrome Extension의 지갑 기능을 postMessage로 연결</li>
           <li><strong>Pockie miniDApp</strong> — 앱 재배포 없이 플랫폼·버전별로 기능을 켜고 끌 수 있도록 BFF config v2에 feature flag 구현</li>
-          <li><strong>BTCFi Partners</strong> — 파트너마다 다른 예치·출금·클레임 흐름은 따로 두고 UI·데이터 처리는 공유하도록 변경, 공통 모듈이 파트너 코드에 의존하지 않는지 CI에서 검사</li>
+          <li><strong>BTCFi Partners</strong> — 상품 조건과 지갑 연동 방식이 달라 거래 흐름을 파트너별로 분리 — 파트너 수와 배포 일정을 고려해 모노레포 도입 대신 기존 저장소에서 경계를 나누고 CI로 의존 규칙 검사</li>
         </ul>
       </div>
     </div>
@@ -700,7 +699,7 @@
       <div>
         <div class="ach-title">사내 AI Agent 런타임 개선</div>
         <ul class="ach-points">
-          <li>Claude SDK에서 Codex App Server로 실행 환경을 옮기고, 한 요청의 취소·종료가 다른 요청에 영향을 주지 않도록 상태 분리</li>
+          <li>Claude 종량제 요금 변동에 대응해 Codex로 전환 — 오픈소스의 잦은 업데이트를 따라가는 부담도 고려해 App Server를 선택하고, 요청별 상태·취소·종료를 분리</li>
           <li>쓰지 않는 MCP 서버까지 매번 시작하던 낭비를 줄이기 위해, 도구를 호출할 때 필요한 서버만 실행하는 lazy proxy 구현</li>
           <li>요청을 읽기·쓰기로만 나누던 권한 정책을 바꿔, 각 도구가 외부에 미치는 영향과 되돌릴 수 있는지를 보고 실행·승인·차단 결정</li>
           <li>자동 리뷰가 저장소별 규칙을 따르도록 하고 리뷰 근거·confidence·CI 결과를 확인한 뒤 승인하도록 구성, 최종 merge는 사람이 판단</li>
@@ -714,7 +713,7 @@
         <div class="ach-title">DApp 데이터 조회 구조 최적화</div>
         <ul class="ach-points">
           <li><strong>Gas Top-up</strong> — SDK의 중복 자산 조회와 불필요한 vault 조회를 제거하고 갱신 주기를 조정해 최초 API 호출을 <span class="highlight">25~46회→17회</span>, 주기 호출 분당 <span class="highlight">25회→1~19회</span>로 축소</li>
-          <li><strong>BiFi WebView</strong> — bridge pair 최초 1회+pair별 N회 조회를 outbound·inbound 각 1회로 재구성하고 React Query 캐시로 조회 결과 재사용</li>
+          <li><strong>BiFi WebView</strong> — 변경이 드문 bridge pair를 자산마다 반복 조회하던 구조를 최초 1회+pair별 N회에서 outbound·inbound 각 1회로 줄이고 React Query 캐시로 재사용</li>
         </ul>
       </div>
     </div>

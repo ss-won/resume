@@ -27,7 +27,8 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 | /txs LCP 3.7s→2.2s, TBT 1,330ms→200ms | Redacted-internal | 로컬 Lighthouse 측정 |
 | /tokens LCP 3.3s→1.8s, TBT 510ms→190ms | Redacted-internal | 로컬 Lighthouse 측정 |
 | 최대 75개 row 테이블의 가상화를 롤백하고 단계적 렌더링으로 전환 | Redacted-internal | explorer-front PR 근거 |
-| WebSocket 업데이트를 30초 단위로 배치 | Redacted-internal | explorer-front PR 근거 |
+| 실시간 행 추가량 제한 및 신규·대기 거래 알림 배치 | Redacted-internal | explorer-front #133: 블록 자동 추가 상한 25행, 배치 간격 600ms. 기존 30초 표기는 오류로 정정. LCP·TBT는 렌더링 변경 전체의 전후 결과이며 배치 단독 기여도는 측정하지 않음 |
+| 무거운 행이 계속 추가되며 테이블 재렌더링 부담이 발생 | Self-attested | 2026-09-14 본인 설명. 실시간 처리 개선의 동기이며 개별 효과 수치로 환산하지 않음 |
 
 ### DApp 데이터 조회 구조
 
@@ -63,7 +64,13 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| Explorer Pages Router → App Router, React·Chakra UI 마이그레이션 및 hydration 오류 수정 | Redacted-internal | explorer-front #121 본인 PR 확인. 파일/줄 수와 단독 소유 주장은 제외 |
+| Explorer 마이그레이션 (CV 대표 성과에서 제외) | Redacted-internal + Self-attested | explorer-front #121. 팀 next-boilerplate 공용 버전 및 Node 22 기준 정리가 목적이었다는 본인 설명에 따라 대표 bullet 제외 |
+
+### 의사결정 배경 (2026-09-14 본인 확인)
+
+- BTCFi Partners: 파트너별 상품 조건·지갑 연동 방식이 달라 공유 모듈 변경이 다른 화면에 영향을 줌. 파트너 수와 확장 불확실성, 단일 웹 root 요구, 빠른 배포를 고려해 모노레포 대신 기존 저장소 내 경계와 CI 검사 선택. 영향 완전 제거나 배포 시간 개선 수치는 주장하지 않음.
+- AI: Claude 종량제 요금 변동에 대응하려는 전환. 오픈소스 upstream 업데이트 추적 부담도 고려해 Codex App Server 선택. 실제 비용 절감·안정화 성과는 측정하지 않음.
+- BiFi: bridge pair 목록이 자주 바뀌지 않아 반복 조회를 줄임. 코드로 확인한 API 요청 수는 1+N → 2회이며 N² 복잡도 주장은 사용하지 않음.
 | Jest → Vitest, Playwright 렌더링·레이아웃·WebSocket 회귀 테스트 | Redacted-internal | explorer-front #140 본인 PR 본문에 테스트 파일과 검증 명시 |
 
 ## 스마트마인드
