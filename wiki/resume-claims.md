@@ -82,7 +82,7 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 | AI 팀이 정의한 ANTLR 문법을 Monaco Editor에 연결해 구문 강조·오류 진단·키워드 자동완성 구현 | Public | 공개 이력서·기술 글; ANTLR grammar 저작으로 표현하지 않음 |
 | iframe+postMessage와 module federation 기반 Microfrontend 설계 | Public | 공개 이력서·기술 글 |
 | Query Viewer에 서버 페이지네이션·가상 스크롤·미디어 lazy loading 적용 | Public | 공개 이력서·기술 글 |
-| FastAPI·Docker Compose 기반 모델 서빙과 데이터 파이프라인 개발 | Public | 공개 이력서 |
+| 단기 과제·PoC에서 FastAPI·Docker Compose 기반 모델 서빙과 데이터 파이프라인 개발 | Public + Self-attested | 공개 이력서 및 2026-09-14 본인 확인. 상용 서비스 구축·장기 운영 경험으로 확대하지 않음 |
 | 2023년부터 본인 포함 2~3명 파트의 스크럼 운영·업무 배분·우선순위 결정 담당 | Self-attested | 본인 확인 |
 
 ## 주의 사항

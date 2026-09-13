@@ -31,7 +31,7 @@ AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 �
 - AI 팀이 정의한 ANTLR 문법을 Monaco Editor에 연결해 SQL 구문 강조·오류 진단·키워드 자동완성 구현
 - Workspace에 여러 앱을 연결하기 위해 Lab·Main은 iframe·postMessage로 연동하고 Query Manager·File Manager는 module federation으로 구성
 - 대용량 쿼리 결과를 한꺼번에 그리지 않도록 서버 페이지네이션·가상 스크롤을 적용하고 이미지·영상은 필요한 시점에 로딩
-- FastAPI·Docker Compose로 AI 예측 모델 서빙 환경과 데이터 수집·전처리 파이프라인 개발
+- 단기 과제·PoC에서 FastAPI·Docker Compose로 AI 예측 모델 서빙 환경과 데이터 수집·전처리 파이프라인 개발
 - 2023년부터 본인 포함 2~3명 프론트엔드 파트의 스크럼 운영·업무 배분·우선순위 결정 담당
 
 ---
