@@ -2,7 +2,7 @@
 
 ## Summary
 
-React·TypeScript로 WebView 거래 제품과 BFF, 블록 스캐너, 사내 개발 도구를 만들어왔다. 구현에 앞서 데이터 흐름과 시스템 경계를 정리하고, 성능 개선은 측정값을 기준으로 판단한다. 제품 문제를 해결하는 데 필요하면 NestJS·FastAPI 등 백엔드 영역까지 직접 다룬다.
+React·TypeScript로 모바일 앱·브라우저 확장에서 함께 쓰는 WebView 제품과 데이터 분석 UI를 개발해왔습니다. 공통 화면과 플랫폼별 기능의 역할을 나누고, BFF로 외부 서비스 연동을 정리했습니다. 렌더링 성능 개선과 모노레포 전환을 맡았으며, 프론트엔드 파트 리더로 업무 배분과 우선순위 결정도 담당했습니다.
 
 ## Employment
 
@@ -18,7 +18,7 @@ React·TypeScript로 WebView 거래 제품과 BFF, 블록 스캐너, 사내 개�
 ### 스마트마인드 (ThanoSQL) — Full-stack Engineer → Frontend Developer → Frontend Part Leader
 **2021.07 – 2024.09**
 
-AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 개발하고, pnpm·Turborepo 모노레포 전환과 Microfrontend 설계를 주도했다. 후반에는 프론트엔드 3인 팀의 업무 배분·코드 리뷰·기술 의사결정을 담당했다.
+AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 개발하고, pnpm·Turborepo 모노레포 전환과 Microfrontend 설계를 주도했다. 2023년부터 본인 포함 2~3명 프론트엔드 파트의 스크럼 운영·업무 배분·우선순위 결정을 담당했다.
 
 **Tech stack:** TypeScript, React, Next.js, Vite, Monaco Editor, ANTLR, JupyterLab, pnpm, Turborepo, Playwright, FastAPI, Docker Compose
 
@@ -28,10 +28,12 @@ AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 �
 
 ## Certifications and activities
 
-- 정보처리기사 (2019)
 - AWS Certified Solutions Architect – Associate (2026)
-- OSSCA — TypeScript Handbook 한글화 (2020), githru-vscode-ext (2023)
+- 정보처리기사 (2019)
+
+- OSSCA — githru-vscode-ext (2023)
 - SmileGate Membership AI 1기 (2021)
+- OSSCA — TypeScript Handbook 한글화 (2020)
 - AUSG 1기 (2019)
 
 ## Languages

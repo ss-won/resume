@@ -47,9 +47,7 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 | Pockie BFF config v2에서 플랫폼·앱 버전별 feature flag로 기능 노출을 제어 | Redacted-internal | pockie-api-v2 PR 근거 |
 | BTCFi Partners를 파트너사 모바일 지갑의 iOS·Android WebView에 연동 | Redacted-internal | btcfi-partners-front PR 근거 |
 | BTCFi Partners의 postMessage 이벤트와 widget route를 설계해 일반 웹과 WebView에서 상품 로직 재사용 | Redacted-internal | btcfi-partners-front PR 근거 |
-| 저장된 isNative 값 오류로 native 송금이 ERC-20 호출로 생성될 수 있던 문제를 주소 기반 재판정으로 수정 | Redacted-internal | pockie-wallet-extension PR #490, 수정 전 회귀 테스트 11건 중 10건 실패 |
-| 여러 RPC·사내 API 호출을 BFF 집계 API로 통합 | Redacted-internal | 관련 BFF·클라이언트 PR 근거 |
-| 응답 시점에 따라 자산 수치가 달라지던 문제 해결 | Redacted-internal | 관련 BFF PR 근거 |
+| Swap 견적·거래 데이터 생성·상태 조회를 NestJS BFF로 분리하고 외부 SDK 오류 처리 정리 | Redacted-internal | pockie-api-v2 Swap BFF 엔드포인트·에러 정규화 근거 |
 | 플랫폼·버전별 feature flag를 BFF config v2에 구현 | Redacted-internal | pockie-api-v2 PR 근거 |
 
 ### AI Agent 런타임

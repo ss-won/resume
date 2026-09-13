@@ -51,13 +51,13 @@
     "gpa": "3.99 / 4.5"
   },
   "certifications": [
-    { "name": "정보처리기사", "year": 2019 },
-    { "name": "AWS Certified Solutions Architect – Associate", "year": 2026 }
+    { "name": "AWS Certified Solutions Architect – Associate", "year": 2026 },
+    { "name": "정보처리기사", "year": 2019 }
   ],
   "activities": [
-    { "name": "OSSCA TypeScript Handbook 한글화", "year": 2020 },
     { "name": "OSSCA githru-vscode-ext", "year": 2023 },
     { "name": "SmileGate Membership AI 1기", "year": 2021 },
+    { "name": "OSSCA TypeScript Handbook 한글화", "year": 2020 },
     { "name": "AUSG 1기", "year": 2019 }
   ],
   "languages": [
