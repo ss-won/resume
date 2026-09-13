@@ -7,7 +7,7 @@
 | 출처 | URL | 용도 |
 |---|---|---|
 | 공개 이력서 (HTML) | https://ss-won.github.io/resume/ | 현재 공개 이력서 최신본 |
-| 공개 이력서 (PDF) | https://ss-won.github.io/resume/sowon-jung-cv.pdf | PDF 버전 |
+| 공개 이력서 (PDF) | https://ss-won.github.io/resume/cv.pdf | PDF 버전 |
 | GitHub (ss-won) | https://github.com/ss-won | 공개 프로젝트, OSSCA 기여 |
 | Velog | https://velog.io/@ss-won | 재직 중 작성한 기술 글 — 동시대 기록 |
 
@@ -25,35 +25,35 @@ velog.io/@ss-won에서 작성된 글은 재직 중 작성된 동시대 기록으
 | 항목 | 값 | 기준일 |
 |---|---|---|
 | 기여 조직 | bifrost-platform | — |
-| 집계 기간 | 2024-09-03 ~ 2026-07-10 | — |
-| 작성 PR | 515건 | 2026-07-13 |
-| 병합 PR | 503건 | 2026-07-13 |
-| 병합률 | 97.7% (derived) | — |
-| 기여 저장소 수 | 21개 | — |
-| 릴리스 제목 제외 PR | 376건 | — |
+| 집계 기간 | 2024-09-03 ~ 2026-09-11 | — |
+| 작성 PR | 602건 | 2026-09-11 |
+| 병합 PR | 580건 | 2026-09-11 |
+| 병합률 | 96.3% (derived) | — |
+| 기여 저장소 수 | 23개 | — |
+| 릴리스 제목 제외 PR | 443건 | — |
 
 주요 저장소별 PR 수:
 
 | 저장소 | 작성 | 병합 |
 |---|---:|---:|
-| pockie-ui | 108 | 103 |
-| btcfi-partners-front | 90 | 88 |
-| explorer-front | 67 | 67 |
-| btcfi-boost-front | 44 | 44 |
+| pockie-ui | 112 | 105 |
+| btcfi-partners-front | 110 | 106 |
+| explorer-front | 68 | 68 |
+| btcfi-boost-front | 48 | 46 |
 | app-pockie-front | 36 | 36 |
-| biquid-front | 36 | 34 |
+| biquid-front | 37 | 35 |
 | pockie-api-v2 | 28 | 28 |
-| pockie-wallet-extension | 28 | 27 |
-| Donald (AI Agent) | 21 | 21 |
+| pockie-wallet-extension | 40 | 38 |
+| Donald (AI Agent) | 40 | 37 |
 
-## Self-attested 사업 지표
+## Self-attested 사업 지표 (공개 이력서 미사용)
 
-이미 공개 이력서에 기재된 것에 한해 나열한다. 외부 독립 검증 불가.
+과거 공개본에 기재됐으나 현재 이력서에서는 제외한 참고 지표다. 외부 독립 검증 불가.
 
 | 항목 | 값 | 출처 |
 |---|---|---|
-| BTCFi Partners / Hashport Wallet WebView 일본 액티브 유저 | 750명대 (출시 3개월 기준) | 공개 이력서 |
-| BTCFi Partners / Hashport Wallet 실제 입금 규모 | 1억 엔대 (출시 3개월 기준) | 공개 이력서 |
+| BTCFi Partners / Hashport Wallet WebView 일본 액티브 유저 | 750명대 (출시 3개월 기준) | 과거 공개본 · 현재 미사용 |
+| BTCFi Partners / Hashport Wallet 실제 입금 규모 | 1억 엔대 (출시 3개월 기준) | 과거 공개본 · 현재 미사용 |
 | Turborepo 모노레포 빌드 시간 단축 | 7분 → 1분 (당시 측정 기준) | 공개 이력서 + velog |
 
 ## 면접 시 제시 가능한 근거

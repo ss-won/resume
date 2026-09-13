@@ -464,43 +464,46 @@
   }
 
   @media print {
-    .page { padding: 16px 26px; }
-    body { font-size: 11.5px; line-height: 1.5; }
+    @page { size: A4; margin: 0; }
+    .page { padding: 34px 42px 38px; }
+    body { font-size: 11.5px; line-height: 1.55; }
 
-    .header { margin-bottom: 16px; }
+    .header { margin-bottom: 20px; }
     .name { font-size: 32px; }
-    .header-top { padding-bottom: 12px; margin-bottom: 10px; }
-    .profile { font-size: 11.5px; line-height: 1.65; }
+    .header-top { padding-bottom: 13px; margin-bottom: 11px; }
+    .profile { font-size: 11.5px; line-height: 1.7; }
 
-    .section { margin-bottom: 16px; }
-    .section-label { margin-bottom: 9px; }
+    .section { margin-bottom: 19px; }
+    .section-label { margin-bottom: 11px; }
 
-    .exp { margin-bottom: 10px; padding-top: 12px; }
-    .exp-intro { font-size: 11px; margin-bottom: 6px; line-height: 1.55; }
-    .stack { margin-bottom: 6px; gap: 3px; }
+    .exp { margin-bottom: 14px; padding-top: 14px; }
+    .exp-intro { font-size: 11px; margin-bottom: 8px; line-height: 1.6; }
+    .stack { margin-bottom: 8px; gap: 4px; }
     .stack-tag { font-size: 10.5px; padding: 1px 6px; }
-    .bullets { gap: 3px; }
-    .bullets li { font-size: 11.5px; line-height: 1.6; }
+    .bullets { gap: 4px; }
+    .bullets li { font-size: 11.2px; line-height: 1.62; }
 
-    .ach { margin-bottom: 10px; padding-top: 12px; }
-    .ach-title { font-size: 13px; margin-bottom: 6px; }
-    .ach-body { margin-bottom: 6px; font-size: 11.5px; line-height: 1.6; }
-    .ach-sub { margin-bottom: 5px; }
+    .ach { margin-bottom: 14px; padding-top: 14px; }
+    .ach-title { font-size: 13px; margin-bottom: 8px; }
+    .ach-body { margin-bottom: 8px; font-size: 11.5px; line-height: 1.65; }
+    .ach-points { gap: 4px; }
+    .ach-points li { font-size: 11.2px; line-height: 1.62; }
+    .ach-sub { margin-bottom: 7px; }
     .ach-sub-title { font-size: 11.5px; }
-    .ach-sub-body { font-size: 11px; line-height: 1.6; }
-    .svc-map { padding: 7px 11px; margin-bottom: 7px; gap: 3px; }
-    .svc-row { font-size: 11px; line-height: 1.55; }
+    .ach-sub-body { font-size: 11px; line-height: 1.65; }
+    .svc-map { padding: 9px 12px; margin-bottom: 9px; gap: 4px; }
+    .svc-row { font-size: 11px; line-height: 1.6; }
     .svc-name { font-size: 11px; }
     .svc-desc { font-size: 11px; }
-    .result-block { padding: 7px 11px; margin-top: 7px; gap: 3px; }
-    .result-block p { font-size: 11px; line-height: 1.6; }
+    .result-block { padding: 9px 12px; margin-top: 9px; gap: 4px; }
+    .result-block p { font-size: 11px; line-height: 1.65; }
     .perf-table { font-size: 11px; }
-    .perf-table th, .perf-table td { padding: 5px 10px 5px 0; }
+    .perf-table th, .perf-table td { padding: 6px 10px 6px 0; }
 
-    .footer-grid { padding-top: 12px; }
-    .footer-right { gap: 14px; }
-    .footer-block p { font-size: 11px; line-height: 1.65; }
-    .footer-block-title { margin-bottom: 6px; }
+    .footer-grid { padding-top: 14px; }
+    .footer-right { gap: 16px; }
+    .footer-block p { font-size: 10.8px; line-height: 1.68; }
+    .footer-block-title { margin-bottom: 7px; }
 
     .exp { break-inside: avoid; }
     .ach-sub { break-inside: avoid; }
@@ -511,6 +514,11 @@
     .ach-title { break-after: avoid; }
     .exp-company { break-after: avoid; }
     .footer-grid { break-inside: avoid; }
+    .key-achievements {
+      break-before: page;
+      page-break-before: always;
+      padding-top: 36px;
+    }
   }
 </style>
 </head>
@@ -543,7 +551,7 @@
       <span class="meta-chip" style="color:var(--ink4);">|</span>
       <span class="meta-chip"><strong>Frontend Developer</strong></span>
       <span class="meta-chip">·</span>
-      <span class="meta-chip">가천대학교 컴퓨터공학과 <span style="font-family:'DM Mono',monospace;font-size:11.5px;color:var(--ink4);">GPA 3.98 / 4.5</span></span>
+      <span class="meta-chip">가천대학교 컴퓨터공학과 <span style="font-family:'DM Mono',monospace;font-size:11.5px;color:var(--ink4);">GPA 3.99 / 4.5</span></span>
     </div>
   </header>
 
@@ -551,7 +559,7 @@
   <section class="section">
     <div class="section-label">Profile</div>
     <p class="profile">
-      React·TypeScript 기반 제품 화면 구현과 BFF 설계에서 출발해, 현재는 LLM 기반 AI Agent 런타임 개선과 MCP 연동 개발 도구 자동화까지 직접 구축·운영하고 있습니다. 성능 병목을 찾아 측정 가능한 수치로 증명하는 방식을 선호하고, 필요하면 NestJS·FastAPI 같은 프론트엔드 바깥 영역도 스스로 다룹니다. 기술적인 토론과 질문이 자유로운 팀에서 더 좋은 성과를 냅니다.
+      React·TypeScript로 WebView 거래 제품과 BFF, 블록 스캐너, 사내 개발 도구를 만들어왔습니다. 구현에 앞서 데이터 흐름과 시스템 경계를 정리하고, 성능 개선은 측정값을 기준으로 판단합니다. 제품 문제를 해결하는 데 필요하면 NestJS·FastAPI 등 백엔드 영역까지 직접 다룹니다.
     </p>
   </section>
 
@@ -563,12 +571,12 @@
       <div class="exp-left">
         <div class="exp-period">2024.09 — 현재</div>
         <div class="exp-type">Frontend Developer</div>
-        <div class="exp-duration">1년 11개월</div>
+        <div class="exp-duration">2년</div>
       </div>
       <div class="exp-right">
         <div class="exp-company">파이랩테크놀로지</div>
         <div class="exp-role">Frontend Developer</div>
-        <p class="exp-intro">블록 탐색기 성능 최적화·WebView 거래 화면 BFF 설계, AI Agent 런타임·MCP 도구 자동화를 맡고 있습니다.</p>
+        <p class="exp-intro">WebView 거래 제품과 BFF, 블록 스캐너 성능 개선, 사내 AI Agent 런타임 개발을 맡고 있습니다.</p>
         <div class="stack">
           <span class="stack-tag">TypeScript</span>
           <span class="stack-tag">React</span>
@@ -584,12 +592,10 @@
           <span class="stack-tag">Sentry</span>
         </div>
         <ul class="bullets">
-          <li>블록 탐색기 목록 화면 성능 최적화 — 단계적 렌더링·WebSocket 배치 처리로 LCP 평균 <span class="highlight">↓45%</span>, TBT 평균 <span class="highlight">↓74%</span> 달성 (3개 주요 화면 기준)</li>
-          <li>Mobile App·Chrome Extension에서 동일한 WebView 거래 화면 재사용 — BFF 계약 기반 책임 경계 분리, postMessage 프로토콜 설계로 클라이언트별 분기 코드 제거</li>
-          <li>파트너사 모바일 지갑 WebView DApp 출시 — 출시 3개월 만에 일본 액티브 유저 <span class="highlight">750명대</span>·실제 입금 <span class="highlight">1억 엔대</span> 달성</li>
-          <li>다수 RPC·사내 API 직접 분기 호출 구조를 BFF 집계 엔드포인트로 재설계 — race condition 원천 차단, 자산 수치 일관성 확보</li>
-          <li>사내 LLM 기반 AI Agent 런타임 개선 — MCP lazy-proxy(on-demand spawn)로 메모리 경합 제거, confidence verifier(임계값 0.8)·CI 품질 게이트 기반 자동 코드 리뷰 workflow 구성, Codex app server 전환 및 3단계 보안 레이어 + workspace sandbox 격리</li>
-          <li>Figma Template V2 API + Code Connect CLI로 디자인 시스템 MCP 컨텍스트 자동 생성 — Agent 코드 생성 시 컴포넌트 선택 정확도 향상</li>
+          <li>블록 스캐너 주요 목록에 단계적 렌더링과 WebSocket 배치를 적용해 로컬 Lighthouse 기준 LCP 평균 <span class="highlight">45%</span>, TBT 평균 <span class="highlight">74%</span> 단축</li>
+          <li>BiFi·Swap·BTCFi 거래 화면을 Mobile App·Chrome Extension에서 공통 WebView로 재사용하도록 BFF 계약과 postMessage 연동 구조 설계</li>
+          <li>여러 RPC·사내 API 호출을 BFF 집계 API로 묶어 자산 수치가 응답 순서에 따라 달라지던 문제 해결</li>
+          <li>저장된 <code>isNative</code> 값 오류로 native 코인 송금이 ERC-20 호출로 만들어질 수 있던 문제를 주소 비교 방식으로 수정하고 회귀 테스트 추가</li>
         </ul>
       </div>
     </div>
@@ -606,12 +612,13 @@
       </div>
       <div class="exp-right">
         <div class="exp-company">스마트마인드</div>
-        <div class="exp-role">Frontend Developer</div>
+        <div class="exp-role">Frontend Developer → Frontend Part Leader</div>
         <p class="exp-intro">AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 개발했으며, pnpm·Turborepo 모노레포 전환과 Microfrontend 설계를 주도했습니다. 후반에는 프론트엔드 파트 리더로 팀 운영을 담당했습니다.</p>
         <div class="stack">
           <span class="stack-tag">TypeScript</span>
           <span class="stack-tag">React</span>
           <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Vite</span>
           <span class="stack-tag">Monaco Editor</span>
           <span class="stack-tag">ANTLR</span>
           <span class="stack-tag">pnpm · Turborepo</span>
@@ -620,26 +627,26 @@
           <span class="stack-tag">Docker Compose</span>
         </div>
         <ul class="bullets">
-          <li>Workspace First Load 최대 <span class="highlight">40% 단축</span> — vite rollup manualChunk·tree-shaking·dynamic import·React Suspense 조합 적용</li>
-          <li>pnpm·Turborepo 모노레포 전환 및 빌드 캐시 도입으로 앱별 빌드 시간 <span class="highlight">7분 → 1분</span> 단축 — CI 대기 시간 감소로 팀 전체 배포 리드타임 개선</li>
-          <li>SQL Editor 모듈 개발 — ANTLR 문법을 Monaco Editor에 연결해 SQL 구문 강조·자동완성 제공</li>
+          <li>번들 분리·dynamic import로 Workspace 초기 로드 범위를 줄여 당시 측정 기준 First Load 최대 <span class="highlight">40% 단축</span></li>
+          <li>pnpm·Turborepo 모노레포와 빌드 캐시를 도입해 당시 측정 기준 앱별 빌드 시간을 <span class="highlight">7분 → 1분</span>으로 단축</li>
+          <li>AI 팀이 정의한 ANTLR 문법을 Monaco Editor에 연결해 SQL 구문 강조·오류 진단·키워드 자동완성 구현</li>
           <li>Microfrontend 설계·구현 — iframe+postMessage(Lab·Main 간 통신), module federation(Query Manager·File Manager)</li>
           <li>비정형 데이터 Query Viewer 성능 개선 — 서버 페이지네이션·가상 스크롤·미디어 lazy loading으로 대용량 결과 렌더링 안정화</li>
           <li>FastAPI·Docker Compose로 AI 예측 모델 서빙 인프라 구성 및 데이터 수집·전처리 파이프라인 직접 개발</li>
-          <li>파트 리더로서 프론트엔드 3인 팀 업무 배분·코드 리뷰·기술 의사결정 주도</li>
+          <li>2023년부터 본인 포함 2~3명 프론트엔드 파트의 스크럼 운영·업무 배분·우선순위 결정 담당</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Key Achievements -->
-  <section class="section">
+  <section class="section key-achievements">
     <div class="section-label">Key Achievements</div>
 
     <div class="ach">
       <div class="ach-num">01 /</div>
       <div>
-        <div class="ach-title">프론트엔드 성능 병목 개선</div>
+        <div class="ach-title">블록 스캐너(Explorer) 성능 최적화</div>
         <table class="perf-table">
           <thead>
             <tr><th>Route</th><th>LCP (before → after)</th><th>TBT (before → after)</th><th>개선</th></tr>
@@ -666,9 +673,8 @@
           </tbody>
         </table>
         <ul class="ach-points" style="margin-top:12px;">
-          <li>초기 렌더링 범위 제한·단계적 렌더링·WebSocket <span class="highlight">30초 배치 처리</span> — 목록 화면 첫 페인트 시 불필요한 렌더 트리 축소</li>
-          <li>가스 충전 서비스 <span class="highlight">1+N</span> 조회 → 지원 토큰 기준 단일 조회로 재설계, SDK 중복 asset fetch 제거</li>
-          <li>bridge pair 조회 <span class="highlight">1+N → 2회</span> 캐시 조회로 축소 — API 호출 수 감소 및 응답 일관성 확보</li>
+          <li>최대 75개 row를 노출하는 테이블에서 가상화 적용 시 레이아웃 공백 문제가 있어 롤백하고, 초기 row 수를 제한한 단계적 렌더링으로 전환</li>
+          <li>WebSocket <span class="highlight">30초 배치 처리</span>로 실시간 업데이트에 따른 반복 렌더링 축소</li>
         </ul>
       </div>
     </div>
@@ -676,26 +682,36 @@
     <div class="ach">
       <div class="ach-num">02 /</div>
       <div>
-        <div class="ach-title">모바일 WebView 거래 제품 출시</div>
+        <div class="ach-title">DApp 데이터 조회 구조 최적화</div>
         <ul class="ach-points">
-          <li>BFF 계약 기반 책임 경계를 정의해 Mobile App·Chrome Extension 양쪽에서 동일한 WebView 거래 화면을 재사용 — 클라이언트별 분기 코드 제거, 신규 플랫폼 온보딩 비용 최소화</li>
-          <li>iOS·Android·Extension 버전별 feature flag를 BFF config v2에 구현 — 클라이언트 재배포 없이 서버에서 기능 노출 제어</li>
+          <li><strong>Gas Top-up</strong> — SDK가 환율 계산을 위해 반복하던 asset 조회 의존을 분리하고, GTU API가 이미 제공하는 vault·network asset의 중복 조회를 제거해 최초 호출 <span class="highlight">25~46회→17회</span>, 주기 호출 분당 <span class="highlight">25회→1~19회</span>로 축소</li>
+          <li><strong>BiFi WebView</strong> — bridge pair 최초 1회+pair별 N회 조회를 outbound·inbound 각 1회로 재구성하고 React Query 캐시를 적용해 반복 조회 제거</li>
+          <li><strong>BiFi WebView</strong> — balance 조회를 background dispatcher 경유에서 클라이언트 단일 호출로 바꾸고 거래 성공 직후 즉시 갱신</li>
         </ul>
-        <div class="result-block" style="margin-top:12px;">
-          <p>파트너사 모바일 지갑 WebView DApp 출시 3개월 — 일본 액티브 유저 <span class="highlight">750명대</span>·실제 입금 <span class="highlight">1억 엔대</span> 달성</p>
-        </div>
       </div>
     </div>
 
     <div class="ach">
       <div class="ach-num">03 /</div>
       <div>
-        <div class="ach-title">사내 LLM 기반 AI Agent 런타임 개선</div>
+        <div class="ach-title">모바일 WebView 거래 제품·안정성 개선</div>
         <ul class="ach-points">
-          <li>MCP lazy-proxy 도입 — 매 request마다 서버 전체를 spawn하던 구조를 on-demand spawn으로 전환해 동시 요청 시 메모리 경합 제거</li>
-          <li>confidence verifier(임계값 0.8)·CI 품질 게이트로 자동 코드 리뷰 workflow 구성 — 최종 머지는 사람이 확인하는 운영 원칙 유지, 리뷰 편의성만 자동화</li>
-          <li>Codex app server 전환 및 3단계 보안 레이어(활성화 검사·bash 안전성·write 승인) 적용, 외부 코드 실행·환경 오염 가능 작업은 workspace sandbox로 완전 격리</li>
-          <li>Figma Template V2 API + Code Connect CLI로 디자인 시스템 MCP 컨텍스트 자동 생성 — Agent가 컴포넌트를 직접 조회해 코드 생성 정확도 향상</li>
+          <li><strong>Pockie miniDApp</strong> — BiFi·Swap·BTCFi 화면은 공통 WebView로 배포하고, 지갑 서명·전송만 Mobile App·Chrome Extension에 위임하도록 구조화</li>
+          <li><strong>Pockie miniDApp</strong> — iOS·Android·Extension과 앱 버전별 feature flag를 BFF config v2에 구현해 클라이언트 재배포 없이 기능 노출 제어</li>
+          <li><strong>BTCFi Partners</strong> — 파트너사 iOS·Android 지갑에 WebView 거래 제품을 연동하고, postMessage·widget route로 일반 웹과 상품 로직 공유</li>
+          <li><strong>거래 안정성</strong> — native 코인 오판정으로 잘못된 ERC-20 호출이 생성될 수 있던 문제를 주소 기반 재판정으로 수정</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ach">
+      <div class="ach-num">04 /</div>
+      <div>
+        <div class="ach-title">사내 AI Agent 런타임 개선</div>
+        <ul class="ach-points">
+          <li>요청마다 프로세스와 모든 MCP를 띄우던 구조를 Codex App Server 세션 기반으로 전환</li>
+          <li>도구의 외부 영향·되돌릴 수 있는지를 판단해 필요한 MCP와 권한만 열고, 취소하기 어려운 작업만 사용자 승인을 받도록 실행 정책 구성</li>
+          <li>자동 코드 리뷰에 confidence·CI 상태 검증을 추가하고 최종 merge는 사람이 확인하도록 운영</li>
         </ul>
       </div>
     </div>
@@ -704,18 +720,19 @@
 
   <!-- Footer -->
   <div class="footer-grid">
-    <div class="section-label" style="padding-top:0;">Certifications &amp; Activities</div>
+    <div class="ach-num">05 /</div>
     <div class="footer-right">
       <div class="footer-block">
         <div class="footer-block-title">Certifications &amp; Activities</div>
         <p><strong>정보처리기사</strong> 2019</p>
+        <p><strong>AWS Certified Solutions Architect – Associate</strong> (SAA-C03)</p>
         <p><strong>OSSCA</strong> — TS Handbook 한글화 (2020), githru-vscode-ext (2023)</p>
         <p><strong>SmileGate Membership</strong> AI 1기 (2021)</p>
         <p><strong>AUSG</strong> (AWSKRUG University Student Group) 1기 (2019)</p>
       </div>
       <div class="footer-block">
         <div class="footer-block-title">Languages</div>
-        <p><strong>영어</strong> — 기초 비즈니스</p>
+        <p><strong>영어</strong> — 기초 비즈니스 <span style="font-family:'DM Mono',monospace;font-size:11.5px;color:#767676;">(Opic IM1)</span></p>
         <p><strong>일본어</strong> — 기초 비즈니스 <span style="font-family:'DM Mono',monospace;font-size:11.5px;color:#767676;">(JLPT N3)</span></p>
       </div>
     </div>

@@ -438,8 +438,8 @@
       <div class="sub">
         <div class="sub-title">Gas Top-up — 호출 구조 단순화</div>
         <ul class="bullets">
-          <li>보유 자산 수에 비례하던 자산·잔액 조회를 <strong>지원 토큰 기준 조회</strong>로 정리</li>
-          <li>사내 SDK가 wallet 연결 시 asset 정보를 최상위 provider에 저장하는 구조를 파악하고, 하위 앱 단위에서 <strong>중복 설정된 asset 조회를 제거</strong>해 진입 시 호출 단순화</li>
+          <li>SDK가 환율 계산을 위해 반복하던 asset 조회 의존을 분리하고, GTU API가 이미 제공하는 vault·network asset의 <strong>중복 조회를 제거</strong></li>
+          <li>최초 biholder 호출을 <span class="highlight">25~46회→17회</span>, 주기 호출을 분당 <span class="highlight">25회→1~19회</span>로 축소</li>
         </ul>
       </div>
 

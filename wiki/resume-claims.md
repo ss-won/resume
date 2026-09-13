@@ -1,102 +1,83 @@
 # Resume Claims — Evidence Map
 
-공개 이력서의 각 주요 주장과 그 증거 레벨 매핑.
+현재 공개 이력서의 주요 주장과 증거 레벨 매핑.
 
 Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **Derived**
 
 ---
 
-## 파이랩테크놀로지 경력
-
-### 프로필 요약
+## 프로필
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| React·TypeScript 기반 5년차 프론트엔드 개발자 | Public | 이력서 기재 재직 기간 계산 |
-| 크립토 자산 지갑(Pockie), DeFi DApp(BiFi·BTCFi), 블록 탐색기, AI 데이터 분석 플랫폼 담당 | Redacted-internal | PR 저장소 분포로 확인 |
-| 병목을 찾아 개선하는 과정을 좋아함 | Self-attested | 본인 기술 |
+| React·TypeScript 기반 프론트엔드 개발 | Public | 경력·기술 스택으로 확인 |
+| WebView 제품, BFF, 성능 최적화, 사내 개발 도구 개발 | Redacted-internal | 관련 저장소와 PR 근거 |
+| 화면 구현 전 데이터 흐름과 책임 범위를 먼저 정리 | Self-attested | 본인 업무 방식 |
+| 성능 문제를 실제 측정 결과로 개선 | Redacted-internal | Explorer Lighthouse 측정 결과 |
+| NestJS·FastAPI 등 프론트엔드 밖의 영역도 담당 | Public + Redacted-internal | 공개 이력과 관련 저장소 근거 |
 
-### WebView 거래 제품
+## 파이랩테크놀로지
 
-| 주장 | 레벨 | 비고 |
-|---|---|---|
-| Mobile App과 Chrome Extension에서 동일한 BTCFi·Swap WebView 거래 화면 재사용 구조 구현 | Redacted-internal | pockie-ui PR 근거 |
-| postMessage 연동, Pockie BFF API 기반 거래 상태 조회 구조 구현 | Redacted-internal | pockie-ui PR 근거 |
-| BiFi 예치·출금·대출·상환 4개 화면 구현 | Redacted-internal | pockie-ui #158 근거 |
-| Swap 견적 조회·승인·거래 데이터 생성·상태 조회 연결 | Redacted-internal | pockie-ui PR 근거 |
-| widget route로 WebView/일반 웹 접근 분리 | Redacted-internal | pockie-ui PR 근거 |
-| iOS·Android·Extension 버전별 feature flag + BFF config v2 | Redacted-internal | pockie-api-v2 #42 근거 |
-| BTCFi Partners · Hashport Wallet WebView — 출시 3개월간 일본 액티브 유저 750명대 | Self-attested | 외부 검증 불가 |
-| 실제 입금 1억 엔대 운영 | Self-attested | 외부 검증 불가 |
-
-### DApp BFF 통합
+### 블록 스캐너(Explorer) 성능 최적화
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| BiFi·BTCFi·Swap·Gas Top-up 비즈니스 로직을 BFF 계약·TanStack Query hook 기반으로 통합 | Redacted-internal | pockie-ui PR 근거 |
+| 주요 목록 화면 LCP 평균 45%, TBT 평균 74% 단축 | Derived | 3개 route 로컬 Lighthouse 측정값 평균 |
+| /blocks LCP 3.7s→1.9s, TBT 1,010ms→270ms | Redacted-internal | 로컬 Lighthouse 측정, 프로덕션 RUM 아님 |
+| /txs LCP 3.7s→2.2s, TBT 1,330ms→200ms | Redacted-internal | 로컬 Lighthouse 측정 |
+| /tokens LCP 3.3s→1.8s, TBT 510ms→190ms | Redacted-internal | 로컬 Lighthouse 측정 |
+| 최대 75개 row 테이블의 가상화를 롤백하고 단계적 렌더링으로 전환 | Redacted-internal | explorer-front PR 근거 |
+| WebSocket 업데이트를 30초 단위로 배치 | Redacted-internal | explorer-front PR 근거 |
 
-### BTCFi 파트너 제품
-
-| 주장 | 레벨 | 비고 |
-|---|---|---|
-| JPYC 스테이블코인 예치·인출·수익 청구 지원 파트너 제품 구현 | Redacted-internal | btcfi-partners-front PR 근거 |
-| 비동기 입금·복구·epoch 출금·진행 대시보드 구현 | Redacted-internal | btcfi-partners-front PR 근거 |
-| 파트너별 수명주기·정책 분리 구조 구축 | Redacted-internal | btcfi-partners-front PR 근거 |
-| 초기 구축부터 릴리스까지 담당 | Redacted-internal | PR 타임스탬프로 확인 |
-
-### Bifrost Explorer
+### DApp 데이터 조회 구조
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| Blockscout 기반 Explorer 유지보수 | Redacted-internal | explorer-front 67 PR 근거 |
-| Next.js App Router 전환 | Redacted-internal | 983개 파일 PR 근거 |
-| /blocks LCP 3.7s→1.9s (↓49%), TBT 1,010ms→270ms (↓73%) | Redacted-internal + caveat | 로컬 Lighthouse 측정 — 프로덕션 RUM 아님 |
-| /txs LCP 3.7s→2.2s (↓41%), TBT 1,330ms→200ms (↓85%) | Redacted-internal + caveat | 로컬 Lighthouse 측정 |
-| /tokens LCP 3.3s→1.8s (↓45%), TBT 510ms→190ms (↓63%) | Redacted-internal + caveat | 로컬 Lighthouse 측정 |
-| 빌드타임 환경변수 의존을 런타임 주입으로 전환(ISR→SSR) — 테스트넷·메인넷이 동일 빌드 산출물 공유 | Redacted-internal | explorer-front PR 근거 · 애플리케이션 레이어 기여이며 컨테이너·파이프라인 구성은 인프라팀 담당 |
+| Gas Top-up의 최초 biholder 호출 25~46회→17회, interval 분당 25회→1~19회 축소 | Redacted-internal | app-pockie-front PR #51 측정 결과 |
+| SDK AssetInfoMapProvider가 환율 계산을 위해 발생시키던 asset 조회 의존을 분리하고 GTU API가 이미 제공하는 vault·network asset 중복 조회 제거 | Redacted-internal | app-pockie-front PR #51·BAM-240; PR 본문과 commit 7676c6e 코드 대조 |
+| BiFi bridge pair 1회+pair별 N회 조회를 outbound·inbound 각 1회와 React Query 캐시로 재구성 | Redacted-internal | pockie-ui commit c6ad5e1; 변경 전 Promise.allSettled pair별 조회, 변경 후 query 2개·staleTime Infinity |
+| BiFi balance 조회를 background dispatcher 경유에서 client 단일 호출로 변경하고 거래 성공 직후 갱신 | Redacted-internal | pockie-ui PR #171·#200 근거 |
+
+### WebView와 BFF
+
+| 주장 | 레벨 | 비고 |
+|---|---|---|
+| Pockie miniDApp의 BiFi·Swap·BTCFi 거래 화면을 Mobile App·Chrome Extension에서 공통 WebView로 재사용 | Redacted-internal | pockie-ui PR 근거 |
+| Pockie 거래 화면은 BFF 계약을 소비하고 지갑 서명·전송은 각 호스트에 위임 | Redacted-internal | pockie-ui PR 근거 |
+| Pockie BFF config v2에서 플랫폼·앱 버전별 feature flag로 기능 노출을 제어 | Redacted-internal | pockie-api-v2 PR 근거 |
+| BTCFi Partners를 파트너사 모바일 지갑의 iOS·Android WebView에 연동 | Redacted-internal | btcfi-partners-front PR 근거 |
+| BTCFi Partners의 postMessage 이벤트와 widget route를 설계해 일반 웹과 WebView에서 상품 로직 재사용 | Redacted-internal | btcfi-partners-front PR 근거 |
+| 저장된 isNative 값 오류로 native 송금이 ERC-20 호출로 생성될 수 있던 문제를 주소 기반 재판정으로 수정 | Redacted-internal | pockie-wallet-extension PR #490, 수정 전 회귀 테스트 11건 중 10건 실패 |
+| 여러 RPC·사내 API 호출을 BFF 집계 API로 통합 | Redacted-internal | 관련 BFF·클라이언트 PR 근거 |
+| 응답 시점에 따라 자산 수치가 달라지던 문제 해결 | Redacted-internal | 관련 BFF PR 근거 |
+| 플랫폼·버전별 feature flag를 BFF config v2에 구현 | Redacted-internal | pockie-api-v2 PR 근거 |
 
 ### AI Agent 런타임
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| 코드 리뷰 workflow 구성, confidence verifier, Jira 티켓 검증, 품질 게이트 연결 | Redacted-internal | Donald repo 21 PR 근거 |
-| dynamic tools 구조 전환 (MCP 중복 실행 제거) | Redacted-internal | Donald repo PR 근거 |
-| Codex app server 기반 전환 | Redacted-internal | Donald repo PR 근거 |
-| prompt injection·외부 코드 실행·전역 package 변경 리스크 통제 | Redacted-internal | Donald repo PR 근거 |
+| stdio 기반 요청별 프로세스 실행을 필요한 도구만 실행하는 구조로 개선 | Redacted-internal | Donald repo PR 근거 |
+| 별도 confidence 검증과 CI 상태 확인으로 자동 리뷰 제출 조건 관리 | Redacted-internal | Donald repo PR 근거 |
+| 최종 머지는 사람이 확인하는 운영 원칙 유지 | Self-attested | 운영 정책 |
+| Codex App Server 기반 세션 구조로 전환 | Redacted-internal | Donald repo PR 근거 |
+| 도구 실행 전 보안 검증과 MCP·권한 선택 허용 구조 설계 | Redacted-internal | Donald repo PR 근거 |
 
-### UI Kit (디자인 시스템) — Figma Code Connect
-
-| 주장 | 레벨 | 비고 |
-|---|---|---|
-| 합성 컴포넌트의 동적 children을 정적 매핑으로 표현할 수 없어 Template V2 도입 | Redacted-internal | ui-kit-front 커밋 근거 (engineer-provided) |
-| 런타임에 인스턴스를 순회하고 자식 컴포넌트 템플릿을 재귀 실행 | Redacted-internal | Tabs·Toast `findConnectedInstances` + `executeTemplate` 확인 |
-| 20개 컴포넌트 중 14개에 동적 API 적용 | Redacted-internal | 커밋 분석으로 확인 |
-| Code Connect CLI와 연동해 Figma MCP 코드 생성 컨텍스트를 정형화 | Redacted-internal + Self-attested | CLI 연동은 `figma.template.config.json`으로 확인; MCP 컨텍스트 개선은 본인 확인 |
-| 해당 작업은 브랜치 전용 (main/develop 미병합) | Redacted-internal | PR 1건(v0.1.8 릴리즈)만 main 병합 |
-
----
-
-## 스마트마인드 경력
+## 스마트마인드
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| ANTLR 문법을 Monaco Editor에 연결한 SQL Editor 개발 | Public | velog 기술 글 + resume |
-| JupyterLab Workspace 개발 | Public | velog + resume |
-| 비정형 Query Viewer 가상화·페이지네이션·lazy loading 적용 | Public | velog + resume |
-| pnpm·Turborepo 모노레포 전환 | Public | velog + resume |
-| 빌드 시간 7분 → 1분 단축 | Public | velog + resume (당시 측정 기준) |
-| FastAPI PyTorch 모델 서빙 구현 | Public | resume |
-| Docker Compose 배포 환경 구성 | Public | resume |
-| Frontend Part Leader 역할 | Public | resume |
-| Playwright E2E on GitHub Actions | Public | velog |
+| Workspace First Load 최대 40% 단축 | Public | 공개 이력서·기술 글, 당시 측정 기준 |
+| pnpm·Turborepo 전환과 빌드 캐시로 앱별 빌드 7분→1분 단축 | Public | 공개 이력서·기술 글, 당시 측정 기준 |
+| AI 팀이 정의한 ANTLR 문법을 Monaco Editor에 연결해 구문 강조·오류 진단·키워드 자동완성 구현 | Public | 공개 이력서·기술 글; ANTLR grammar 저작으로 표현하지 않음 |
+| iframe+postMessage와 module federation 기반 Microfrontend 설계 | Public | 공개 이력서·기술 글 |
+| Query Viewer에 서버 페이지네이션·가상 스크롤·미디어 lazy loading 적용 | Public | 공개 이력서·기술 글 |
+| FastAPI·Docker Compose 기반 모델 서빙과 데이터 파이프라인 개발 | Public | 공개 이력서 |
+| 2023년부터 본인 포함 2~3명 파트의 스크럼 운영·업무 배분·우선순위 결정 담당 | Self-attested | 본인 확인 |
 
----
-
-## 주의 필요 주장
+## 주의 사항
 
 | 주장 | 주의 이유 |
 |---|---|
-| Lighthouse 수치 | 로컬 측정 환경 — 프로덕션 실사용자 측정(RUM)과 다를 수 있음 |
-| 일본 액티브 유저 750명대 | Self-attested, 면접에서 "팀 공유 수치 기준"으로 답변 |
-| 실제 입금 1억 엔대 | Self-attested, 동일 |
-| 빌드 시간 7분→1분 | "당시 측정 기준"으로 환경 명시 필요 |
+| Explorer 성능 수치 | 로컬 Lighthouse 측정으로 프로덕션 실사용자 측정(RUM)과 구분 필요 |
+| 빌드 시간 7분→1분 | 당시 프로젝트와 CI 환경의 측정 기준임을 면접에서 명시 |
+| 2024.09–현재 2년 | 2026년 9월 기준 표기이며 지원 시점에 따라 갱신 필요 |

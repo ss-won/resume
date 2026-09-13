@@ -10,8 +10,8 @@ Frontend Developer · swj960515@gmail.com · github.com/ss-won · linkedin.com/i
 Gas Top-up DApp(Pockie 지갑 가스 충전)·BiFi WebView(DeFi 렌딩)·Bifrost Explorer(Bifrost Network 블록 탐색기)에서 발생한 성능 병목을 서비스별 원인에 맞춰 각각 개선했습니다.
 
 ### Gas Top-up — 호출 구조 단순화
-- 보유 자산 수에 비례하던 자산·잔액 조회를 **지원 토큰 기준 조회**로 정리
-- 사내 SDK가 wallet 연결 시 asset 정보를 최상위 provider에 저장하는 구조를 파악하고, 하위 앱 단위에서 **중복 설정된 asset 조회를 제거**해 진입 시 호출 단순화
+- SDK가 환율 계산을 위해 반복하던 asset 조회 의존을 분리하고, GTU API가 이미 제공하는 vault·network asset의 **중복 조회를 제거**
+- 최초 biholder 호출을 **25~46회→17회**, 주기 호출을 분당 **25회→1~19회**로 축소
 
 ### BiFi WebView — bridge pair 조회 개선
 - 토큰·네트워크 선택마다 네트워크별 bridge pair를 반복 조회하던 구조(1+N회)를 outbound/inbound **2회 캐시 조회**로 전환

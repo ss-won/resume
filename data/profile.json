@@ -8,7 +8,7 @@
     "github": "https://github.com/ss-won",
     "velog": "https://velog.io/@ss-won",
     "resume_html": "https://ss-won.github.io/resume/",
-    "resume_pdf": "https://ss-won.github.io/resume/sowon-jung-cv.pdf"
+    "resume_pdf": "https://ss-won.github.io/resume/cv.pdf"
   },
   "employment": [
     {
@@ -48,10 +48,11 @@
     "school_en": "Gachon University",
     "major": "컴퓨터공학과",
     "major_en": "Computer Science",
-    "gpa": "3.98 / 4.5"
+    "gpa": "3.99 / 4.5"
   },
   "certifications": [
-    { "name": "정보처리기사", "year": 2019 }
+    { "name": "정보처리기사", "year": 2019 },
+    { "name": "AWS Certified Solutions Architect – Associate", "exam": "SAA-C03" }
   ],
   "activities": [
     { "name": "OSSCA TypeScript Handbook 한글화", "year": 2020 },
@@ -61,7 +62,7 @@
   ],
   "languages": [
     { "language": "한국어", "level": "native" },
-    { "language": "영어", "level": "business_basic" },
+    { "language": "영어", "level": "business_basic", "cert": "Opic IM1" },
     { "language": "일본어", "level": "business_basic", "cert": "JLPT N3" }
   ],
   "github_aggregate": {
@@ -69,13 +70,13 @@
     "_note": "Collected from private bifrost-platform org; individual PR links withheld",
     "org": "bifrost-platform",
     "account": "pilab-sowon",
-    "snapshot_date": "2026-07-13",
+    "snapshot_date": "2026-09-11",
     "period_start": "2024-09-03",
-    "period_end": "2026-07-10",
-    "authored_prs": 515,
-    "merged_prs": 503,
-    "merge_rate_percent": 97.7,
-    "repositories_contributed": 21,
-    "non_release_prs": 376
+    "period_end": "2026-09-11",
+    "authored_prs": 602,
+    "merged_prs": 580,
+    "merge_rate_percent": 96.3,
+    "repositories_contributed": 23,
+    "non_release_prs": 443
   }
 }
