@@ -29,7 +29,7 @@ AI 데이터 분석 플랫폼 Workspace의 SQL Editor·Query Viewer 모듈을 �
 ## Certifications and activities
 
 - 정보처리기사 (2019)
-- AWS Certified Solutions Architect – Associate (SAA-C03)
+- AWS Certified Solutions Architect – Associate (2026)
 - OSSCA — TypeScript Handbook 한글화 (2020), githru-vscode-ext (2023)
 - SmileGate Membership AI 1기 (2021)
 - AUSG 1기 (2019)

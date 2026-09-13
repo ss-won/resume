@@ -52,7 +52,7 @@
   },
   "certifications": [
     { "name": "정보처리기사", "year": 2019 },
-    { "name": "AWS Certified Solutions Architect – Associate", "exam": "SAA-C03" }
+    { "name": "AWS Certified Solutions Architect – Associate", "year": 2026 }
   ],
   "activities": [
     { "name": "OSSCA TypeScript Handbook 한글화", "year": 2020 },
