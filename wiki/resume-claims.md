@@ -36,29 +36,35 @@ Evidence levels: **Public** · **Redacted-internal** · **Self-attested** · **D
 | Gas Top-up의 최초 biholder 호출 25~46회→17회, interval 분당 25회→1~19회 축소 | Redacted-internal | app-pockie-front PR #51 측정 결과 |
 | SDK AssetInfoMapProvider가 환율 계산을 위해 발생시키던 asset 조회 의존을 분리하고 GTU API가 이미 제공하는 vault·network asset 중복 조회 제거 | Redacted-internal | app-pockie-front PR #51·BAM-240; PR 본문과 commit 7676c6e 코드 대조 |
 | BiFi bridge pair 1회+pair별 N회 조회를 outbound·inbound 각 1회와 React Query 캐시로 재구성 | Redacted-internal | pockie-ui commit c6ad5e1; 변경 전 Promise.allSettled pair별 조회, 변경 후 query 2개·staleTime Infinity |
-| BiFi balance 조회를 background dispatcher 경유에서 client 단일 호출로 변경하고 거래 성공 직후 갱신 | Redacted-internal | pockie-ui PR #171·#200 근거 |
+| BiFi balance 조회 개선 (CV 대표 성과에서는 제외) | Redacted-internal | pockie-ui #171: 토큰별 refreshSingleBalance → 다중 토큰 잔액 API 1회. #200: 성공 후 refetch 호출 추가. 최신 잔액 즉시 반영을 보장한다는 뜻은 아님 |
 
 ### WebView와 BFF
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| Pockie miniDApp의 BiFi·Swap·BTCFi 거래 화면을 Mobile App·Chrome Extension에서 공통 WebView로 재사용 | Redacted-internal | pockie-ui PR 근거 |
-| Pockie 거래 화면은 BFF 계약을 소비하고 지갑 서명·전송은 각 호스트에 위임 | Redacted-internal | pockie-ui PR 근거 |
+| Pockie miniDApp의 BiFi·Swap·BTCFi 화면 개발 및 postMessage 지갑 기능 연동 | Redacted-internal | pockie-ui 제품/기여 기록. 공통 아키텍처 전체를 신규·단독 설계했다고 주장하지 않음 |
 | Pockie BFF config v2에서 플랫폼·앱 버전별 feature flag로 기능 노출을 제어 | Redacted-internal | pockie-api-v2 PR 근거 |
-| BTCFi Partners를 파트너사 모바일 지갑의 iOS·Android WebView에 연동 | Redacted-internal | btcfi-partners-front PR 근거 |
-| BTCFi Partners의 postMessage 이벤트와 widget route를 설계해 일반 웹과 WebView에서 상품 로직 재사용 | Redacted-internal | btcfi-partners-front PR 근거 |
-| Swap 견적·거래 데이터 생성·상태 조회를 NestJS BFF로 분리하고 외부 SDK 오류 처리 정리 | Redacted-internal | pockie-api-v2 Swap BFF 엔드포인트·에러 정규화 근거 |
+| BTCFi Partners의 파트너별 거래 흐름 분리, UI·데이터 계층 공유 및 의존 경계 CI 테스트 | Redacted-internal | btcfi-partners-front #132 원본 PR 본문 확인. 파트너별 flows 물리 분리이며 모든 상품 흐름 공통화가 아님 |
+| NestJS Swap BFF 개발·견적/거래 데이터/상태 API 연동 | Redacted-internal | pockie-api-v2 #12·#16~19. 프론트에서 BFF로 이전했다는 전후 관계나 모든 엔드포인트 신규 작성은 주장하지 않음 |
 | 플랫폼·버전별 feature flag를 BFF config v2에 구현 | Redacted-internal | pockie-api-v2 PR 근거 |
 
 ### AI Agent 런타임
 
 | 주장 | 레벨 | 비고 |
 |---|---|---|
-| stdio 기반 요청별 프로세스 실행을 필요한 도구만 실행하는 구조로 개선 | Redacted-internal | Donald repo PR 근거 |
+| MCP 서버 전체 실행을 필요한 서버의 호출 시 실행으로 변경 | Redacted-internal | Donald #36 원본 PR: MCP lazy proxy. 런타임 전환과 별개 변경이며 복합 응답시간 수치를 단독 효과로 쓰지 않음 |
 | 별도 confidence 검증과 CI 상태 확인으로 자동 리뷰 제출 조건 관리 | Redacted-internal | Donald repo PR 근거 |
 | 최종 머지는 사람이 확인하는 운영 원칙 유지 | Self-attested | 운영 정책 |
-| Codex App Server 기반 세션 구조로 전환 | Redacted-internal | Donald repo PR 근거 |
-| 도구 실행 전 보안 검증과 MCP·권한 선택 허용 구조 설계 | Redacted-internal | Donald repo PR 근거 |
+| Claude SDK 실행 경로를 Codex App Server 세션·worker로 전환 | Redacted-internal | Donald #48 원본 PR·worker/queue 파일 목록 및 synthesis 확인. 기존 기반 위 런타임 전환이며 전체 에이전트 신규 개발 아님 |
+| 요청 단위 read/write 분류를 도구별 영향·가역성에 따른 실행 정책으로 재설계 | Redacted-internal | Donald #50·#52 원본 PR 확인. 승인/차단 조건이 있으며 보안 완전 보장으로 표현하지 않음 |
+| 자동 리뷰에 저장소별 규칙·confidence·CI 검증 적용 | Redacted-internal | Donald #19·#46·#47·#52·#58. #52에 최종 merge 별도 사람 확인 명시 |
+
+### 성능 개선 외 추가 선정 근거
+
+| 주장 | 레벨 | 비고 |
+|---|---|---|
+| Explorer Pages Router → App Router, React·Chakra UI 마이그레이션 및 hydration 오류 수정 | Redacted-internal | explorer-front #121 본인 PR 확인. 파일/줄 수와 단독 소유 주장은 제외 |
+| Jest → Vitest, Playwright 렌더링·레이아웃·WebSocket 회귀 테스트 | Redacted-internal | explorer-front #140 본인 PR 본문에 테스트 파일과 검증 명시 |
 
 ## 스마트마인드
 
